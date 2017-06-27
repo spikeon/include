@@ -1,0 +1,9 @@
+{{^failed}}
+	{{#wrap.show}}
+		{{>wrap}}
+	{{/wrap.show}}
+
+	{{^wrap.show}}
+		{{>inner}}
+	{{/wrap.show}}
+{{/failed}}
