@@ -29,6 +29,10 @@ abstract class Instance {
 	abstract protected function load($q);
 
 	function __construct($q, $a,  &$plugin) {
+
+		echo "== Plugin Init ==";
+		var_dump($q);
+		var_dump($a);
 		$this->plugin =& $plugin;
 		$this->wp_globs();
 		unset($a['id'], $a['slug']);
@@ -40,8 +44,8 @@ abstract class Instance {
 class Single   extends Instance {
 	function load($q) {
 		$this->id = $this->find_id($q);
-		if(!$this->id) return false;
-		if(!$this->plugin->activate($this->id)) return false;
+		if(!$this->id) $this->failed();
+		if(!$this->plugin->activate($this->id)) return $this->failed();
 
 		$this->slug      = $this->find_slug($this->id);
 		$this->post_type = $this->find_post_type($this->id);
@@ -82,8 +86,8 @@ class Multiple extends Instance {
 
 	function load($q) {
 		$this->id = $this->find_id($q) ?:  get_the_id();
-		if(!$this->id) return false;
-		if(!$this->plugin->activate($this->id)) return false;
+		if(!$this->id) return $this->failed();
+		if(!$this->plugin->activate($this->id)) return $this->failed();
 
 		$this->slug      = $this->find_slug($this->id);
 		$this->post_type = $this->find_post_type($this->id);

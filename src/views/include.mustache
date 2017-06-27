@@ -1,3 +1,4 @@
+Rendered Single
 {{^failed}}
 	{{#wrap.show}}
 		{{>wrap}}
@@ -6,4 +7,7 @@
 	{{^wrap.show}}
 		{{>inner}}
 	{{/wrap.show}}
+{{/failed}}
+{{#failed}}
+	Error!
 {{/failed}}
