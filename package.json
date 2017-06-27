@@ -1,6 +1,7 @@
 {
   "name" : "include",
   "description": "Include Plugin",
+  "version": "3.4.0",
   "tags" : [
     "WordPress",
     "Plugin",

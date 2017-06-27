@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="600px" height="600px" viewBox="0 0 600 600" overflow="auto" xml:space="preserve">
+<rect fill="#FFFFFF" width="600" height="600"/>
+<path fill="#DD0000" d="M53,513v19.447C53,539.103,58.873,545,65.5,545h323c6.627,0,11.5-5.897,11.5-12.553V513
+	C282.833,513,169.667,513,53,513z"/>
+<path fill="#DD0000" d="M388.5,47H191L53,186v164c116.5,0,230.167,0,347,0V58.423C400,51.768,395.127,47,388.5,47z"/>
+<polyline fill="#DD0000" stroke="#FFFFFF" stroke-width="16" stroke-miterlimit="10" points="183,46 183,178 53,178 "/>
+<rect x="233" y="366" fill="#DD0000" width="347" height="131"/>
+<rect x="205" y="397" fill="#FFFFFF" width="108" height="70"/>
+<g>
+	<polygon fill="#9B0000" points="190,487.154 134.846,432 190,376.846 	"/>
+	<rect x="176" y="412" fill="#9B0000" width="121" height="40"/>
+</g>
+</svg>
