@@ -3,7 +3,7 @@
  * Plugin Name: Include
  * Plugin URI: http://wordpress.org/plugins/include/
  * Description: Include a page, post, activity, or other query-object into another.
- * Version: 3.4.38
+ * Version: 3.4.40
  * Author: mflynn, cngann, Clear_Code, bmcswee, flynndev
  * Author URI: http://clearcode.info
  * License: GPL2
@@ -176,6 +176,6 @@ function include_children_shortcode ($atts, $content){
 
 function include_tags_test(){
 
-	return the_tags();
+	return get_the_tag_list();
 }
 add_shortcode('include_tags_test', 'include_tags_test');

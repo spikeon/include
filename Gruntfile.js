@@ -137,7 +137,5 @@ module.exports = function(grunt) {
         'clean:assets_post'
     ]);
     grunt.registerTask('build', ['clean:init', 'copy:build', 'concat:readme', 'concat:readme_wp']);
-
-
-
+    grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'clean:end']);
 };

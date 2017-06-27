@@ -10,13 +10,6 @@ BUILDPATH="$GITPATH/build/"
 DISTPATH="$GITPATH/dist/"
 ASSETPATH="$GITPATH/assets/"
 
-# svn config
-SVNPATH="/tmp/$PLUGINSLUG"                          # path to a temp SVN repo. No trailing slash required and don't add trunk.
-SVNURL="http://plugins.svn.wordpress.org/include/"  # Remote SVN repo on wordpress.org, with no trailing slash
-SVNUSER="mflynn"                                    # your svn username
-
-git add .
-
 while [[ -z "$COMMITMSG" ]]; do
     printf '%s\n' '' '# Commit Message' '# Lines starting with asterix are placed in the changelog' '# Lines starting with + are placed in the Upload Notices' > /tmp/deploy_script_changelog.txt
     $EDITOR /tmp/deploy_script_changelog.txt
@@ -30,8 +23,6 @@ UPGRADENOTICE=`echo "$COMMITMSG" | grep "^[+]"`
 versiony package.json --patch
 
 grunt build
-
-git add .
 
 STABLE=`grep "^Stable tag" $BUILDPATH/readme.txt | awk -F' ' '{print $3}'`
 VERSION=`grep "^ \* Version" $BUILDPATH/$MAINFILE | awk -F' ' '{print $3}'`
@@ -58,8 +49,6 @@ fi
 grunt build
 
 grunt dist
-
-git add .
 
 grunt clean:prepush
 
