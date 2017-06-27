@@ -70,8 +70,4 @@
 			return $s;
 		}
 
-		public function debug($s) {
-			wp_die("<pre>".var_export($s, true)."</pre>");
-		}
-
 	}
