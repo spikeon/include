@@ -6,6 +6,14 @@ trait WP {
 	protected $post;
 	protected $query_stash;
 
+
+	function fail($msg = false){
+		$this->failed = true;
+		if(isset($this->plugin) $this->plugin->debug($msg ?: $this);
+		else $this->debug($msg ?: $this);
+		return false;
+	}
+
 	protected function wp_globs() {
 		$this->wpdb = &$GLOBALS['wpdb'];
 		$this->wp_query = &$GLOBALS['wp_query'];
@@ -21,9 +29,9 @@ trait WP {
 	}
 
 	protected function find_id ($subject) {
-		if(!$subject) return false;
+		if(!$subject) return $this->fail("No ID Given");
 		if(is_numeric($subject)) {
-			if(!$this->check_id($subject)) return false;
+			if(!$this->check_id($subject))return $this->fail("Page doesn't exist");
 			return $subject * 1;
 		}
 		else {
