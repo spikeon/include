@@ -33,7 +33,8 @@ abstract class Instance {
 		echo "== Plugin Init ==";
 		var_dump($q);
 		var_dump($a);
-		$this->plugin =& $plugin;
+		var_dump($plugin);
+		$this->plugin = $plugin;
 		$this->wp_globs();
 		unset($a['id'], $a['slug']);
 		$this->attributes = $a;
