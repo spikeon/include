@@ -2,22 +2,22 @@
 
 	namespace PluginFramework\V_1_1;
 	trait Data {
-		private $data = [];
+		protected $data = [];
 
-		private function load($i, $default) {
+		protected function load($i, $default) {
 			$this->data[$i] = get_option($this->pre($i), $default);
 		}
 
-		private function set($i, $data){
+		protected function set($i, $data){
 			$this->data[$i] = $data;
 		}
 
-		private function save($i = false){
+		protected function save($i = false){
 			if($i !== false) update_option($this->pre($i), $this->data[$i]);
 			else $this->save_all();
 		}
 
-		private function save_all() {
+		protected function save_all() {
 			foreach($this->data as $i => $d) update_option($this->pre($i), $d);
 		}
 

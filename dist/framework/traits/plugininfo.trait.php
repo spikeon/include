@@ -6,13 +6,13 @@
 		 * Plugin Name
 		 * @var string
 		 */
-		private $name = "Plugin Framework";
+		protected $name = "Plugin Framework";
 
 		/**
 		 * Plugin Version
 		 * @var string
 		 */
-		private $version = '1.0.0';
+		protected $version = '1.0.0';
 
 		/**
 		 * Plugin Root
@@ -21,7 +21,7 @@
 		 *
 		 * @var string
 		 */
-		private $root = '';
+		protected $root = '';
 
 		/**
 		 * Plugin File
@@ -30,7 +30,7 @@
 		 *
 		 * @var string
 		 */
-		private $file = '';
+		protected $file = '';
 
 		/**
 		 * Plugin Prefix

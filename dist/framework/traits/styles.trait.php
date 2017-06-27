@@ -2,9 +2,9 @@
 	namespace PluginFramework\V_1_1;
 	trait Styles {
 
-		private $styles_dir     = 'styles/';
-		private $styles         = [];
-		private $admin_styles   = [];
+		protected $styles_dir     = 'styles/';
+		protected $styles         = [];
+		protected $admin_styles   = [];
 
 		/**
 		 * Set Style Directory
@@ -44,7 +44,7 @@
 		 *
 		 * @return string Complete URL
 		 */
-		private function styleUrl($file) {
+		protected function styleUrl($file) {
 			return plugins_url( $this->styles_dir . $file, $this->getFile() );
 		}
 

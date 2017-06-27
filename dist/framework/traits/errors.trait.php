@@ -3,7 +3,7 @@
 	namespace PluginFramework\V_1_1;
 	trait Errors {
 
-		private $errors = [
+		protected $errors = [
 			'forbidden' => 'You do not have sufficient permissions to access this page.'
 		];
 

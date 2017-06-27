@@ -1,9 +1,9 @@
 <?php
 	namespace PluginFramework\V_1_1;
 	trait Scripts {
-		private $scripts_dir    = 'scripts/';
-		private $scripts        = [];
-		private $admin_scripts  = [];
+		protected $scripts_dir    = 'scripts/';
+		protected $scripts        = [];
+		protected $admin_scripts  = [];
 
 
 		/**
@@ -36,7 +36,7 @@
 		 *
 		 * @return string Complete URL
 		 */
-		private function scriptUrl($file) {
+		protected function scriptUrl($file) {
 			return plugins_url( $this->scripts_dir . $file, $this->getFile() );
 		}
 

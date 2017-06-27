@@ -1,8 +1,8 @@
 <?php
 	namespace PluginFramework\V_1_1;
 	trait Pages {
-		private $home_page      = 'index';
-		private $menu_title     = 'Plugin Framework';
+		protected $home_page      = 'index';
+		protected $menu_title     = 'Plugin Framework';
 		/**
 		 * Set Home Page
 		 *
@@ -25,7 +25,7 @@
 			$this->menu_title = $title;
 		}
 
-		private function all_pages(){
+		protected function all_pages(){
 			$shortcode_methods = preg_grep('/^page_/', get_class_methods($this));
 
 			$menu_init = false;

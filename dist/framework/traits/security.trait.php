@@ -1,7 +1,7 @@
 <?php
 	namespace PluginFramework\V_1_1;
 	trait Security {
-		private $security_level = 'manage_options';
+		protected $security_level = 'manage_options';
 
 		/**
 		 * Can user access page?

@@ -3,7 +3,7 @@
 	trait Shortcode {
 
 		public $shortcode_prefix = false;
-		private $shortcodes     = [];
+		protected $shortcodes     = [];
 
 		/**
 		 * Set Shortcode Prefix
@@ -109,7 +109,7 @@
 		/**
 		 * Initializes Shortcodes
 		 */
-		private function init_shortcodes(){
+		protected function init_shortcodes(){
 
 			$shortcode_methods = preg_grep('/^shortcode_/', get_class_methods($this));
 
