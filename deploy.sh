@@ -76,36 +76,25 @@ echo "Creating local copy of SVN repo ..."
 svn co $SVNURL $SVNPATH
 
 cd $SVNPATH
-
 svn delete trunk
 svn delete assets
-
 cp -r $DISTPATH trunk
 cp -r $ASSETPATH assets
-
 svn add trunk
 svn add assets
-
-# Add all new files that are not set to be ignored
 svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2}' | xargs svn add
-
-echo "committing to trunk"
 svn commit --username=$SVNUSER -m "$COMMITMSG"
-
 cd $SVNPATH/assets/
 svn commit --username=$SVNUSER -m "Updating assets"
-
 cd $SVNPATH
 svn copy trunk/ tags/$VERSION/
 cd $SVNPATH/tags/$VERSION
 svn commit --username=$SVNUSER -m "Tagging version $VERSION"
-
-echo "Removing temporary directory $SVNPATH"
 rm -fr $SVNPATH/
 
-grunt clean:prepush
-
 cd $GITPATH
+
+grunt clean:prepush
 
 git add .
 
