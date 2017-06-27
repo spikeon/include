@@ -1,3 +1,32 @@
+
+# Handle Options
+
+do_stable=false
+COMMITMSG=""
+
+while getopts ":s" opt; do
+  case $opt in
+    s)
+      # Make Stable
+        do_stable=true
+      ;;
+    m)
+      # Sending In msg
+      COMMITMSG="$OPTARG"
+      ;;
+
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit 1
+      ;;
+    :)
+      echo "Option -$OPTARG requires an argument." >&2
+      exit 1
+      ;;
+  esac
+done
+
+
 # main config
 PLUGINSLUG="include"
 CURRENTDIR=`pwd`
@@ -37,7 +66,7 @@ fi
 echo "Stable: $STABLE"
 echo "$MAINFILE version: $VERSION"
 
-if [[ ! -z "$1" ]]; then
+if [[ $do_stable ]]; then
 echo "Making this version stable"
 echo "%s/$STABLE/$VERSION/g
 w
