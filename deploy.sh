@@ -63,6 +63,10 @@ echo "Tagging new version in git"
 git tag -a "$VERSION" -m "Tagging version $VERSION"
 
 echo "Pushing latest commit to portfolio, with tags"
+
+git push origin master
+git push origin master --tags
+
 git push portfolio master
 git push portfolio master --tags
 
@@ -71,12 +75,6 @@ echo "Creating local copy of SVN repo ..."
 svn co $SVNURL $SVNPATH
 
 cd $SVNPATH
-
-echo "Ignoring github specific & deployment script"
-svn propset svn:ignore "deploy.sh
-README.md
-.git
-.gitignore" "$SVNPATH/trunk/"
 
 svn delete trunk
 svn delete assets

@@ -11,11 +11,10 @@ module.exports = function(grunt) {
         pkg : package,
 
         readme : {
-            'head' : grunt.file.read('HEAD.md'),
-            'about': grunt.file.read('ABOUT.md'),
-            'readme': grunt.file.read('README.md'),
-            'changelog': grunt.file.read('CHANGELOG.md'),
-            'upgrade': grunt.file.read('UPGRADE_NOTICE.md'),
+            'about':        grunt.file.read('readme/ABOUT.md'),
+            'readme':       grunt.file.read('readme/BODY.md'),
+            'changelog':    grunt.file.read('readme/CHANGELOG.md'),
+            'upgrade':      grunt.file.read('readme/UPGRADE_NOTICE.md'),
         },
 
         copy:{
@@ -53,10 +52,19 @@ module.exports = function(grunt) {
         },
 
         concat: {
-            readme : {
-                src: ['HEAD.md'],
+            readme_wp : {
+                src: ['readme/WORDPRESS.md'],
 
                 dest: 'build/readme.txt',
+                options: {
+                    process: true,
+                    separator : "\n\n"
+                }
+            },
+            readme : {
+                src: ['readme/README.md'],
+
+                dest: 'README.md',
                 options: {
                     process: true,
                     separator : "\n\n"
@@ -65,7 +73,7 @@ module.exports = function(grunt) {
         },
 
         clean : {
-            build :       ['build'],
+            build :       ['build', 'README.md'],
             dist :        ['dist/*'],
             assets_pre :  ['assets', 'thumb.png'],
             assets_post : ['icon.png']
@@ -126,7 +134,7 @@ module.exports = function(grunt) {
         'image_resize:icon_large',
         'clean:assets_post'
     ]);
-    grunt.registerTask('build', ['clean:build', 'assets', 'copy:build', 'concat:readme']);
+    grunt.registerTask('build', ['clean:build', 'assets', 'copy:build', 'concat:readme', 'concat:readme_wp']);
     grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'clean:build']);
 
 

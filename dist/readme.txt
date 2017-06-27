@@ -93,6 +93,9 @@ If an ID is given it includes the child pages of that page, in order.
 
 == Changelog ==
 
+= 3.4.25 =
+* How bout da?
+
 = 3.4.24 =
 * Oops, Deploy script slightly exploded
 
