@@ -20,7 +20,7 @@ abstract class Instance {
 
 	protected $attributes = [];
 
-	abstract protected function load($q);
+	abstract protected function load($q, $plugin);
 	abstract public function view();
 
 	function __construct($q, $a, $plugin) {
