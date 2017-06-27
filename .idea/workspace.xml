@@ -11,38 +11,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/readme.txt">
+      <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+            <state relative-caret-position="810">
+              <caret line="66" column="62" lean-forward="false" selection-start-line="66" selection-start-column="62" selection-end-line="66" selection-end-column="62" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="functions.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/functions.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1498535697000" expanded="true" signature="246:300" ph="SELECT count... $" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="include.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/include.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="3" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
-              <folding>
-                <marker date="1498538663000" expanded="true" signature="3404:3461" ph="SELECT ID FR... $" />
-                <marker date="1498538663000" expanded="true" signature="3688:3743" ph="SELECT post_... $" />
-                <marker date="1498538663000" expanded="true" signature="4851:4908" ph="SELECT ID FR... $" />
-              </folding>
+      <file leaf-file-name="HEAD.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/HEAD.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="150">
+                <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="38" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -50,9 +37,38 @@
       <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+            <state relative-caret-position="210">
+              <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+              <folding>
+                <marker date="1498548178000" expanded="true" signature="0:76" ph="{&quot;name&quot;: &quot;include&quot;...}" />
+                <marker date="1498548178000" expanded="true" signature="0:609" ph="{&quot;name&quot;: &quot;include&quot;...}" />
+                <marker date="1498548178000" expanded="true" signature="468:513" ph="{&quot;grunt&quot;: &quot;^1.0.1&quot;...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readme.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/build/readme.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-605">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="include.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/src/include.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+              <folding>
+                <element signature="e#6#303#0#PHP" expanded="true" />
+                <marker date="1498541884000" expanded="true" signature="3414:3471" ph="SELECT ID FR... $" />
+                <marker date="1498541884000" expanded="true" signature="3698:3753" ph="SELECT post_... $" />
+                <marker date="1498541884000" expanded="true" signature="4861:4918" ph="SELECT ID FR... $" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,9 +76,59 @@
       <file leaf-file-name="deploy.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="70" lean-forward="false" selection-start-line="32" selection-start-column="70" selection-end-line="32" selection-end-column="70" />
+            <state relative-caret-position="502">
+              <caret line="85" column="16" lean-forward="false" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CHANGELOG.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/CHANGELOG.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="0">
+                <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UPGRADE_NOTICE.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/UPGRADE_NOTICE.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="105">
+                <caret line="7" column="51" lean-forward="false" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="include.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/build/include.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1498547549000" expanded="true" signature="9:302" ph=" Plugin Name: Include ..." />
+                <marker date="1498547549000" expanded="true" signature="309:488" ph=" Current Included Posts ..." />
+                <marker date="1498547549000" expanded="true" signature="524:719" ph=" Default Include Shortcode Attributes ..." />
+                <marker date="1498547549000" expanded="true" signature="744:1569" ph="..." />
+                <marker date="1498547549000" expanded="true" signature="1576:1779" ph=" Default Include Shortcode Attributes ..." />
+                <marker date="1498547549000" expanded="true" signature="1811:2217" ph="..." />
+                <marker date="1498547549000" expanded="true" signature="2395:2929" ph=" Include Shortcode ..." />
+                <marker date="1498547549000" expanded="true" signature="2977:4373" ph="..." />
+                <marker date="1498547549000" expanded="true" signature="3415:3472" ph="SELECT ID FR... $" />
+                <marker date="1498547549000" expanded="true" signature="3699:3754" ph="SELECT post_... $" />
+                <marker date="1498547549000" expanded="true" signature="4379:4517" ph=" Include Children Shortcode ..." />
+                <marker date="1498547549000" expanded="true" signature="4574:5662" ph="..." />
+                <marker date="1498547549000" expanded="true" signature="4862:4919" ph="SELECT ID FR... $" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,15 +148,35 @@
         <option value="$PROJECT_DIR$/../../WordPress Plugins/Include/include.php" />
         <option value="$PROJECT_DIR$/../../WordPress Plugins/Include/package.json" />
         <option value="$PROJECT_DIR$/../../WordPress Plugins/Include/deploy.sh" />
+        <option value="$PROJECT_DIR$/../../WordPress/Plugins/Include/README.md" />
+        <option value="$PROJECT_DIR$/../../WordPress/Plugins/Include/src/include.php" />
+        <option value="$PROJECT_DIR$/../../WordPress/Plugins/Include/ABOUT.md" />
+        <option value="$PROJECT_DIR$/../../WordPress/Plugins/Include/.gitignore" />
+        <option value="$PROJECT_DIR$/../../WordPress/Plugins/Include/SCREENSHOTS.md" />
+        <option value="$PROJECT_DIR$/../../WordPress/Plugins/Include/HEAD.md" />
+        <option value="$PROJECT_DIR$/../../WordPress/Plugins/Include/package.json" />
+        <option value="$PROJECT_DIR$/../../WordPress/Plugins/Include/CHANGELOG.md" />
+        <option value="$PROJECT_DIR$/../../WordPress/Plugins/Include/UPGRADE_NOTICE.md" />
+        <option value="$PROJECT_DIR$/../../WordPress/Plugins/Include/Gruntfile.js" />
         <option value="$PROJECT_DIR$/../../WordPress/Plugins/Include/deploy.sh" />
       </list>
     </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/../../WordPress/Plugins/Include/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" fullScreen="true">
@@ -119,6 +205,26 @@
               <item name="Include" type="b2602c69:ProjectViewProjectNode" />
               <item name="Include" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="Include" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Include" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="assets" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Include" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Include" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="build" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Include" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Include" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="dist" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Include" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Include" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -130,9 +236,15 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../../WordPress/Plugins/Include" />
+      <recent name="$PROJECT_DIR$/../../WordPress/Plugins/Include/src" />
       <recent name="$PROJECT_DIR$/../../WordPress/Plugins" />
       <recent name="$PROJECT_DIR$/../../Wordpress Plugins" />
     </key>
@@ -162,12 +274,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1498536834171</updated>
-      <workItem from="1498536836049" duration="2261000" />
+      <workItem from="1498536836049" duration="10964000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2261000" />
+    <option name="totallyTimeSpent" value="10964000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -206,15 +318,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/readme.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/functions.php">
+    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/src/functions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -224,30 +328,144 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/package.json">
+    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/include.php">
+    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/ABOUT.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="15">
+            <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="3" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="3" />
+        <state relative-caret-position="862">
+          <caret line="131" column="0" lean-forward="false" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/build/include.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1498538663000" expanded="true" signature="3404:3461" ph="SELECT ID FR... $" />
-            <marker date="1498538663000" expanded="true" signature="3688:3743" ph="SELECT post_... $" />
-            <marker date="1498538663000" expanded="true" signature="4851:4908" ph="SELECT ID FR... $" />
+            <marker date="1498547549000" expanded="true" signature="9:302" ph=" Plugin Name: Include ..." />
+            <marker date="1498547549000" expanded="true" signature="309:488" ph=" Current Included Posts ..." />
+            <marker date="1498547549000" expanded="true" signature="524:719" ph=" Default Include Shortcode Attributes ..." />
+            <marker date="1498547549000" expanded="true" signature="744:1569" ph="..." />
+            <marker date="1498547549000" expanded="true" signature="1576:1779" ph=" Default Include Shortcode Attributes ..." />
+            <marker date="1498547549000" expanded="true" signature="1811:2217" ph="..." />
+            <marker date="1498547549000" expanded="true" signature="2395:2929" ph=" Include Shortcode ..." />
+            <marker date="1498547549000" expanded="true" signature="2977:4373" ph="..." />
+            <marker date="1498547549000" expanded="true" signature="3415:3472" ph="SELECT ID FR... $" />
+            <marker date="1498547549000" expanded="true" signature="3699:3754" ph="SELECT post_... $" />
+            <marker date="1498547549000" expanded="true" signature="4379:4517" ph=" Include Children Shortcode ..." />
+            <marker date="1498547549000" expanded="true" signature="4574:5662" ph="..." />
+            <marker date="1498547549000" expanded="true" signature="4862:4919" ph="SELECT ID FR... $" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/src/include.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding>
+            <element signature="e#6#303#0#PHP" expanded="true" />
+            <marker date="1498541884000" expanded="true" signature="3414:3471" ph="SELECT ID FR... $" />
+            <marker date="1498541884000" expanded="true" signature="3698:3753" ph="SELECT post_... $" />
+            <marker date="1498541884000" expanded="true" signature="4861:4918" ph="SELECT ID FR... $" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/HEAD.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="150">
+            <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="38" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/SCREENSHOTS.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding>
+            <marker date="1498548178000" expanded="true" signature="0:76" ph="{&quot;name&quot;: &quot;include&quot;...}" />
+            <marker date="1498548178000" expanded="true" signature="0:609" ph="{&quot;name&quot;: &quot;include&quot;...}" />
+            <marker date="1498548178000" expanded="true" signature="468:513" ph="{&quot;grunt&quot;: &quot;^1.0.1&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/build/readme.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-605">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/UPGRADE_NOTICE.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="105">
+            <caret line="7" column="51" lean-forward="false" selection-start-line="7" selection-start-column="51" selection-end-line="7" selection-end-column="51" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/CHANGELOG.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/Gruntfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="66" column="62" lean-forward="false" selection-start-line="66" selection-start-column="62" selection-end-line="66" selection-end-column="62" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="70" lean-forward="false" selection-start-line="32" selection-start-column="70" selection-end-line="32" selection-end-column="70" />
+        <state relative-caret-position="502">
+          <caret line="85" column="16" lean-forward="false" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
           <folding />
         </state>
       </provider>
