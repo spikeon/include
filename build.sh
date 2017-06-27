@@ -4,7 +4,7 @@
 do_stable=false
 COMMITMSG=""
 
-while getopts ":s" opt; do
+while getopts ":sm:" opt; do
   case $opt in
     s)
       # Make Stable
