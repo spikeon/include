@@ -73,10 +73,11 @@ module.exports = function(grunt) {
         },
 
         clean : {
-            build :       ['build', 'README.md'],
+            init :        ['build', 'README.md'],
             dist :        ['dist/*'],
             assets_pre :  ['assets', 'thumb.png'],
-            assets_post : ['icon.png']
+            assets_post : ['icon.png'],
+            final:        ['build']
         },
 
         "convert-svg-to-png" : {
@@ -134,8 +135,8 @@ module.exports = function(grunt) {
         'image_resize:icon_large',
         'clean:assets_post'
     ]);
-    grunt.registerTask('build', ['clean:build', 'assets', 'copy:build', 'concat:readme', 'concat:readme_wp']);
-    grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'clean:build']);
+    grunt.registerTask('build', ['clean:init', 'assets', 'copy:build', 'concat:readme', 'concat:readme_wp']);
+    grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'clean:end']);
 
 
 

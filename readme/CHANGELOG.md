@@ -1,3 +1,6 @@
+= 3.4.27 =
+* Yay, let's make this work one of these years.
+
 = 3.4.25 =
 * How bout da?
 

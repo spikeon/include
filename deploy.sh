@@ -46,10 +46,10 @@ grunt build
 STABLE=`grep "^Stable tag" $BUILDPATH/readme.txt | awk -F' ' '{print $3}'`
 VERSION=`grep "^ \* Version" $BUILDPATH/$MAINFILE | awk -F' ' '{print $3}'`
 
-printf '%s\n' "= $VERSION =" "$CHANGELOG" '' "`cat CHANGELOG.md`" > CHANGELOG.md
+printf '%s\n' "= $VERSION =" "$CHANGELOG" '' "`cat readme/CHANGELOG.md`" > readme/CHANGELOG.md
 
 if [[ ! -z "$UPGRADENOTICE" ]]; then
-printf '%s\n' "= $VERSION =" "$UPGRADENOTICE" '' "`cat UPGRADE_NOTICE.md`" > UPGRADE_NOTICE.md
+printf '%s\n' "= $VERSION =" "$UPGRADENOTICE" '' "`cat readme/UPGRADE_NOTICE.md`" > readme/UPGRADE_NOTICE.md
 fi
 
 echo "Stable: $STABLE"
