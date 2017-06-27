@@ -9,7 +9,7 @@ trait WP {
 
 	function fail($msg = false){
 		$this->failed = true;
-		
+
 		wp_die("<pre>".var_export($msg ?: $this, true)."</pre>");
 
 		return false;
