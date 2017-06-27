@@ -80,10 +80,11 @@ rm -rf $SVNPATH/trunk/*
 rm -rf $SVNPATH/assets/*
 
 cp -r $DISTPATH/* $SVNPATH/trunk/.
-cp -r $ASSETPATH $SVNPATH/assets/.
+cp -r $ASSETPATH/* $SVNPATH/assets/.
 
 svn add $SVNPATH/assets/
-svn delete $SVNPATH/trunk/assets
+
+cd $SVNPATH
 
 # Add all new files that are not set to be ignored
 svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2}' | xargs svn add

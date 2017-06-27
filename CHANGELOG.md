@@ -1,3 +1,6 @@
+= 3.4.24 =
+* Oops, Deploy script slightly exploded
+
 = 3.4.23 =
 * Removing Banner
 * Adding Grunt and SH Builder
