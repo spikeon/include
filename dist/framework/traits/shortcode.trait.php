@@ -110,7 +110,7 @@
 			foreach($shortcode_methods as $method) {
 				$name = $this->shortcode_pre( str_replace( 'shortcode_', '', $method ) );
 				add_shortcode( $name, [ &$this, $method ] );
-				$this->setDefaultAttributes($shortcode, $this['shortcode_attributes_'.$name] ?: [] );
+				$this->setDefaultAttributes($name, $this->{'shortcode_attributes_'.$name} ?: [] );
 			}
 
 		}
