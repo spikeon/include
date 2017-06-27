@@ -54,7 +54,7 @@
 				'plugin_root' => dirname($this->getRoot())
 			];
 
-			return $this->view->render($template, array_merge($defaults, $view));
+			return $this->view->render($template, array_merge($defaults, (array) $view));
 
 
 		}
