@@ -1,3 +1,6 @@
+= 3.4.48 =
+* Adding Pugin Framework
+
 = 3.4.41 =
 * Fixed Tag Overriding Error 
 

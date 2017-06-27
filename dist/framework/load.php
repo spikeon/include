@@ -1,12 +1,12 @@
-<?php 
+<?php
 /**
  * Package:  WordPress Plugin Framework
- * Version:  1.1.56
+ * Version:  1.1.58
  * Date:     27-06-2017
  * Copyright 2017 Mike Flynn - mflynn@flynndev.us
  */ 
- ?>
-<?php
+ 
+
 
 if(!class_exists("PluginFramework\V_1_1\Core")) {
 	require_once( './mustache.php' );

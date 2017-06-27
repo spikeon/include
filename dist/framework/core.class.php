@@ -1,22 +1,14 @@
-<?php 
+<?php
 /**
  * Package:  WordPress Plugin Framework
- * Version:  1.1.56
+ * Version:  1.1.58
  * Date:     27-06-2017
  * Copyright 2017 Mike Flynn - mflynn@flynndev.us
  */ 
- ?>
-<?php
+ 
+
 
 namespace PluginFramework\V_1_1;
-
-/**
- * Plugin Framework
- * Author: Mike Flynn <mflynn@flynndev.us>
- * Version: 1.0
- *
- * Does the heavy lifting for plugin creation as far as adding Menu items, scripts, styles, and shortcodes
- */
 
 abstract class Core{
 
