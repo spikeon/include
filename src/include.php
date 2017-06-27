@@ -11,6 +11,16 @@
 
 require('../framework/dist/load.php');
 
+class IncludePlugin extends PluginFramework\V_1_1\Core {
+	function __construct($name, $ver, $file) {
+
+
+		$this->init($name, $ver, $file);
+	}
+}
+
+$Include = new IncludePlugin("include", '%ver%', __FILE__);
+
 /**
  * Current Included Posts
  *
