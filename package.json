@@ -2,8 +2,8 @@
   "name": "include",
   "title": "Include",
   "description": "Include one Page or Post into another.",
-  "version": "3.4.35",
-  "stable": "3.4.35",
+  "version": "3.4.36",
+  "stable": "3.4.36",
   "wp_requires": "2.5",
   "wp_tested": "4.4.1",
   "tags": [
@@ -47,5 +47,7 @@
     "grunt-convert-svg-to-png": "^1.1.0",
     "grunt-image-resize": "^1.0.0",
     "grunt-svg2png": "^0.2.7"
-  }
+  },
+  "githuburl": "https://github.com/spikeon/include",
+  "wordpressurl": "https://wordpress.org/plugins/include/"
 }
