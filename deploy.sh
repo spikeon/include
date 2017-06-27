@@ -18,6 +18,7 @@ GITPATH="$CURRENTDIR"                              # this file should be in the 
 
 BUILDPATH="$GITPATH/build/"
 DISTPATH="$GITPATH/dist/"
+ASSETPATH="$GITPATH/assets/"
 
 # svn config
 SVNPATH="/tmp/$PLUGINSLUG"                          # path to a temp SVN repo. No trailing slash required and don't add trunk.
@@ -38,7 +39,7 @@ UPGRADENOTICE=`grep "^[^#]" /tmp/deploy_script_upgrade.txt`
 
 versiony package.json --patch
 
-grunt copy:build
+grunt build
 
 STABLE=`grep "^Stable tag" $BUILDPATH/readme.txt | awk -F' ' '{print $3}'`
 VERSION=`grep "^ \* Version" $BUILDPATH/$MAINFILE | awk -F' ' '{print $3}'`
@@ -52,8 +53,7 @@ fi
 echo "Stable: $STABLE"
 echo "$MAINFILE version: $VERSION"
 
-grunt copy:dist
-grunt copy:assets
+grunt dist
 
 git commit -am "$COMMITMSG"
 
@@ -74,26 +74,18 @@ README.md
 .git
 .gitignore" "$SVNPATH/trunk/"
 
-echo "Changing directory to SVN"
-cd $SVNPATH/trunk/
+rm -rf $SVNPATH/trunk/*
+rm -rf $SVNPATH/assets/*
 
-rm -rf *
+cp -r $DISTPATH/* $SVNPATH/trunk/.
+cp -r $ASSETPATH $SVNPATH/assets/.
 
-cp $DISTPATH/* .
-
-ls -la
-
-rm -fr $SVNPATH/
-exit;
-
-echo "Moving assets"
-mkdir $SVNPATH/assets/
-mv $SVNPATH/trunk/assets/* $SVNPATH/assets/
 svn add $SVNPATH/assets/
 svn delete $SVNPATH/trunk/assets
 
 # Add all new files that are not set to be ignored
 svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2}' | xargs svn add
+
 echo "committing to trunk"
 svn commit --username=$SVNUSER -m "$COMMITMSG"
 

@@ -14,8 +14,8 @@
       <file leaf-file-name="Gruntfile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/Gruntfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="810">
-              <caret line="66" column="62" lean-forward="false" selection-start-line="66" selection-start-column="62" selection-end-line="66" selection-end-column="62" />
+            <state relative-caret-position="841">
+              <caret line="62" column="57" lean-forward="false" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -40,9 +40,8 @@
             <state relative-caret-position="210">
               <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
               <folding>
-                <marker date="1498548178000" expanded="true" signature="0:76" ph="{&quot;name&quot;: &quot;include&quot;...}" />
-                <marker date="1498548178000" expanded="true" signature="0:609" ph="{&quot;name&quot;: &quot;include&quot;...}" />
-                <marker date="1498548178000" expanded="true" signature="468:513" ph="{&quot;grunt&quot;: &quot;^1.0.1&quot;...}" />
+                <marker date="1498548963000" expanded="true" signature="0:76" ph="{&quot;name&quot;: &quot;include&quot;...}" />
+                <marker date="1498548963000" expanded="true" signature="0:608" ph="{&quot;name&quot;: &quot;include&quot;...}" />
               </folding>
             </state>
           </provider>
@@ -76,8 +75,8 @@
       <file leaf-file-name="deploy.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/deploy.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="85" column="16" lean-forward="false" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
+            <state relative-caret-position="907">
+              <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -115,19 +114,19 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1498547549000" expanded="true" signature="9:302" ph=" Plugin Name: Include ..." />
-                <marker date="1498547549000" expanded="true" signature="309:488" ph=" Current Included Posts ..." />
-                <marker date="1498547549000" expanded="true" signature="524:719" ph=" Default Include Shortcode Attributes ..." />
-                <marker date="1498547549000" expanded="true" signature="744:1569" ph="..." />
-                <marker date="1498547549000" expanded="true" signature="1576:1779" ph=" Default Include Shortcode Attributes ..." />
-                <marker date="1498547549000" expanded="true" signature="1811:2217" ph="..." />
-                <marker date="1498547549000" expanded="true" signature="2395:2929" ph=" Include Shortcode ..." />
-                <marker date="1498547549000" expanded="true" signature="2977:4373" ph="..." />
-                <marker date="1498547549000" expanded="true" signature="3415:3472" ph="SELECT ID FR... $" />
-                <marker date="1498547549000" expanded="true" signature="3699:3754" ph="SELECT post_... $" />
-                <marker date="1498547549000" expanded="true" signature="4379:4517" ph=" Include Children Shortcode ..." />
-                <marker date="1498547549000" expanded="true" signature="4574:5662" ph="..." />
-                <marker date="1498547549000" expanded="true" signature="4862:4919" ph="SELECT ID FR... $" />
+                <marker date="1498548966000" expanded="true" signature="9:302" ph=" Plugin Name: Include ..." />
+                <marker date="1498548966000" expanded="true" signature="309:488" ph=" Current Included Posts ..." />
+                <marker date="1498548966000" expanded="true" signature="524:719" ph=" Default Include Shortcode Attributes ..." />
+                <marker date="1498548966000" expanded="true" signature="744:1569" ph="..." />
+                <marker date="1498548966000" expanded="true" signature="1576:1779" ph=" Default Include Shortcode Attributes ..." />
+                <marker date="1498548966000" expanded="true" signature="1811:2217" ph="..." />
+                <marker date="1498548966000" expanded="true" signature="2395:2929" ph=" Include Shortcode ..." />
+                <marker date="1498548966000" expanded="true" signature="2977:4373" ph="..." />
+                <marker date="1498548966000" expanded="true" signature="3415:3472" ph="SELECT ID FR... $" />
+                <marker date="1498548966000" expanded="true" signature="3699:3754" ph="SELECT post_... $" />
+                <marker date="1498548966000" expanded="true" signature="4379:4517" ph=" Include Children Shortcode ..." />
+                <marker date="1498548966000" expanded="true" signature="4574:5662" ph="..." />
+                <marker date="1498548966000" expanded="true" signature="4862:4919" ph="SELECT ID FR... $" />
               </folding>
             </state>
           </provider>
@@ -274,12 +273,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1498536834171</updated>
-      <workItem from="1498536836049" duration="10964000" />
+      <workItem from="1498536836049" duration="11278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10964000" />
+    <option name="totallyTimeSpent" value="11278000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -360,19 +359,19 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1498547549000" expanded="true" signature="9:302" ph=" Plugin Name: Include ..." />
-            <marker date="1498547549000" expanded="true" signature="309:488" ph=" Current Included Posts ..." />
-            <marker date="1498547549000" expanded="true" signature="524:719" ph=" Default Include Shortcode Attributes ..." />
-            <marker date="1498547549000" expanded="true" signature="744:1569" ph="..." />
-            <marker date="1498547549000" expanded="true" signature="1576:1779" ph=" Default Include Shortcode Attributes ..." />
-            <marker date="1498547549000" expanded="true" signature="1811:2217" ph="..." />
-            <marker date="1498547549000" expanded="true" signature="2395:2929" ph=" Include Shortcode ..." />
-            <marker date="1498547549000" expanded="true" signature="2977:4373" ph="..." />
-            <marker date="1498547549000" expanded="true" signature="3415:3472" ph="SELECT ID FR... $" />
-            <marker date="1498547549000" expanded="true" signature="3699:3754" ph="SELECT post_... $" />
-            <marker date="1498547549000" expanded="true" signature="4379:4517" ph=" Include Children Shortcode ..." />
-            <marker date="1498547549000" expanded="true" signature="4574:5662" ph="..." />
-            <marker date="1498547549000" expanded="true" signature="4862:4919" ph="SELECT ID FR... $" />
+            <marker date="1498548966000" expanded="true" signature="9:302" ph=" Plugin Name: Include ..." />
+            <marker date="1498548966000" expanded="true" signature="309:488" ph=" Current Included Posts ..." />
+            <marker date="1498548966000" expanded="true" signature="524:719" ph=" Default Include Shortcode Attributes ..." />
+            <marker date="1498548966000" expanded="true" signature="744:1569" ph="..." />
+            <marker date="1498548966000" expanded="true" signature="1576:1779" ph=" Default Include Shortcode Attributes ..." />
+            <marker date="1498548966000" expanded="true" signature="1811:2217" ph="..." />
+            <marker date="1498548966000" expanded="true" signature="2395:2929" ph=" Include Shortcode ..." />
+            <marker date="1498548966000" expanded="true" signature="2977:4373" ph="..." />
+            <marker date="1498548966000" expanded="true" signature="3415:3472" ph="SELECT ID FR... $" />
+            <marker date="1498548966000" expanded="true" signature="3699:3754" ph="SELECT post_... $" />
+            <marker date="1498548966000" expanded="true" signature="4379:4517" ph=" Include Children Shortcode ..." />
+            <marker date="1498548966000" expanded="true" signature="4574:5662" ph="..." />
+            <marker date="1498548966000" expanded="true" signature="4862:4919" ph="SELECT ID FR... $" />
           </folding>
         </state>
       </provider>
@@ -417,9 +416,8 @@
         <state relative-caret-position="210">
           <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
           <folding>
-            <marker date="1498548178000" expanded="true" signature="0:76" ph="{&quot;name&quot;: &quot;include&quot;...}" />
-            <marker date="1498548178000" expanded="true" signature="0:609" ph="{&quot;name&quot;: &quot;include&quot;...}" />
-            <marker date="1498548178000" expanded="true" signature="468:513" ph="{&quot;grunt&quot;: &quot;^1.0.1&quot;...}" />
+            <marker date="1498548963000" expanded="true" signature="0:76" ph="{&quot;name&quot;: &quot;include&quot;...}" />
+            <marker date="1498548963000" expanded="true" signature="0:608" ph="{&quot;name&quot;: &quot;include&quot;...}" />
           </folding>
         </state>
       </provider>
@@ -456,16 +454,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/Gruntfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="66" column="62" lean-forward="false" selection-start-line="66" selection-start-column="62" selection-end-line="66" selection-end-column="62" />
+        <state relative-caret-position="841">
+          <caret line="62" column="57" lean-forward="false" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../WordPress/Plugins/Include/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="502">
-          <caret line="85" column="16" lean-forward="false" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
+        <state relative-caret-position="907">
+          <caret line="104" column="0" lean-forward="false" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding />
         </state>
       </provider>
