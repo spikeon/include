@@ -25,6 +25,8 @@ SVNPATH="/tmp/$PLUGINSLUG"                          # path to a temp SVN repo. N
 SVNURL="http://plugins.svn.wordpress.org/include/"  # Remote SVN repo on wordpress.org, with no trailing slash
 SVNUSER="mflynn"                                    # your svn username
 
+git add .
+
 while [[ -z "$CHANGELOG" ]]; do
     printf '%s\n' '' '# Changes:' '# Example:' '# * added changelog' > /tmp/deploy_script_changelog.txt
     $EDITOR /tmp/deploy_script_changelog.txt

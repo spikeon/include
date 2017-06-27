@@ -1,0 +1,1 @@
+1. The Include Plugin default Options Panel.  Set the default options for the includes here.  Located at Tools > Include
