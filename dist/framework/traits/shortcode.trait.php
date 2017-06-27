@@ -64,6 +64,41 @@
 			foreach($names as $name => $func) $this->addShortcode($name, $func);
 		}
 
+
+		/**
+		 * Current Include Shortcode Attributes
+		 *
+		 * @author Mike Flynn
+		 * @since 4.0.0
+		 * @var array Shortcode Parameter Default Values
+		 */
+		protected $attributes = [];
+
+		/**
+		 * Default Include Shortcode Attributes
+		 *
+		 * @author Mike Flynn
+		 * @since 4.0.0
+		 * @var array Shortcode Parameter Default Values
+		 */
+		protected $default_attributes = [];
+
+		protected function setAttributes($shortcode, $attributes = []) {
+			$this->push($this->shortcode_pre($shortcode, 'atts'), $attributes);
+		}
+
+		protected function setDefaultAttributes($shortcode, $attributes = []) {
+			$this->default_attributes[$shortcode] = $attributes;
+		}
+
+		protected function loadAttributes($shortcode){
+			$this->attributes[$shortcode] = $this->pull($this->shortcode_pre($shortcode, 'atts'), $this->default_attributes[$shortcode]);
+		}
+
+		protected function atts($shortcode, $a) {
+			return shortcode_atts( $this->attributes[$shortcode], $a, $this->shortcode_pre($shortcode));
+		}
+
 		/**
 		 * Initializes Shortcodes
 		 */
@@ -71,19 +106,13 @@
 
 			$shortcode_methods = preg_grep('/^shortcode_/', get_class_methods($this));
 
-
 			// Method method
 			foreach($shortcode_methods as $method) {
 				$name = $this->shortcode_pre( str_replace( 'shortcode_', '', $method ) );
 				add_shortcode( $name, [ &$this, $method ] );
+				$this->setDefaultAttributes($shortcode, $this['shortcode_attributes_'.$name] ?: [] );
 			}
 
-			$debug['functions'] = $this->shortcodes;
-
-			// Array method
-			foreach($this->shortcodes as $shortcode => $func) {
-				add_shortcode( $this->shortcode_pre( $shortcode ), $func );
-			}
 		}
 
 	}

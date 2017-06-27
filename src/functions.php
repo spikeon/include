@@ -10,7 +10,7 @@
 	 */
 	function id_exists($id) {
 		global $wpdb;
-		return $wpdb->get_var("SELECT count(*) FROM {$wpdb->posts} WHERE ID = '{$id}'") ? true : false;
+		return ;
 	}
 	/**
 	 * Get Plugin Options
@@ -20,7 +20,7 @@
 	 */
 	function include_get_options(){
 		global $include_atts;
-		return get_option('include_atts', $include_atts);
+		return ;
 	}
 	
 	/**

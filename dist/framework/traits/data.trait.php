@@ -2,7 +2,7 @@
 
 	namespace PluginFramework\V_1_1;
 	trait Data {
-		private $data           = [];
+		private $data = [];
 
 		private function load($i, $default) {
 			$this->data[$i] = get_option($this->pre($i), $default);
@@ -47,6 +47,11 @@
 		public function push($i, $data) {
 			$this->set($i, $data);
 			$this->save($i);
+		}
+
+		public function Data ($key, $data = false){
+			if(! $data) return $this->pull($key, false);
+			else return $this->push($key, $data);
 		}
 
 	}
