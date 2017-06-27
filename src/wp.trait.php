@@ -9,8 +9,9 @@ trait WP {
 
 	function fail($msg = false){
 		$this->failed = true;
-		if(isset($this->plugin)) $this->plugin->debug( $msg ?: $this);
-		else $this->debug($msg ?: $this);
+		
+		wp_die("<pre>".var_export($msg ?: $this, true)."</pre>");
+
 		return false;
 	}
 
