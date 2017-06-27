@@ -103,11 +103,22 @@ echo
 echo "Creating local copy of SVN repo ..."
 svn co $SVNURL $SVNPATH
 
+
 cd $SVNPATH
+
+svn propset svn:global-ignores ".svnignore" .
+
 svn delete trunk
 svn delete assets
 cp -r $DISTPATH trunk
 cp -r $ASSETPATH assets
+
+
+svn propset svn:ignore "deploy.sh
+README.md
+.git
+.gitignore" "$SVNPATH/trunk/"
+
 svn add trunk
 svn add assets
 svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2}' | xargs svn add
