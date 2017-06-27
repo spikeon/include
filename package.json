@@ -1,0 +1,15 @@
+{
+  "name" : "include",
+  "description": "Include Plugin",
+  "tags" : [
+    "WordPress",
+    "Plugin",
+    "Php",
+    "Open Source"
+  ],
+  "author": {
+    "name": "Mike Flynn",
+    "email": "mflynn@flynndev.us"
+  },
+  "license": "ISC"
+}
