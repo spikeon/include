@@ -92,7 +92,14 @@
 		}
 
 		protected function loadAttributes($shortcode){
-			$this->attributes[$shortcode] = $this->pull($this->concat($shortcode, 'atts'), $this->default_attributes[$shortcode]);
+			if(!isset($this->default_attributes[$shortcode])){
+				var_dump($shortcode);
+				var_dump($this->default_attributes);
+				if(isset($this->{'shortcode_attributes_'.$shortcode})){
+					$this->setDefaultAttributes($shortcode, $this->{'shortcode_attributes_'.$shortcode});
+				}
+			}
+			$this->attributes[$shortcode] = $this->pull($this->concat($shortcode, 'atts'), $this->default_attributes[$shortcode] ?: []);
 		}
 
 		protected function atts($shortcode, $a = []) {
@@ -110,7 +117,6 @@
 			foreach($shortcode_methods as $method) {
 				$name = $this->shortcode_pre( str_replace( 'shortcode_', '', $method ) );
 				add_shortcode( $name, [ &$this, $method ] );
-				$this->setDefaultAttributes($name, $this->{'shortcode_attributes_'.$name} ?: [] );
 			}
 
 		}

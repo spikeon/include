@@ -44,8 +44,8 @@ abstract class Instance {
 class Single   extends Instance {
 	function load($q) {
 		$this->id = $this->find_id($q);
-		if(!$this->id) $this->failed();
-		if(!$this->plugin->activate($this->id)) return $this->failed();
+		if(!$this->id) $this->fail();
+		if(!$this->plugin->activate($this->id)) return $this->fail();
 
 		$this->slug      = $this->find_slug($this->id);
 		$this->post_type = $this->find_post_type($this->id);
@@ -86,8 +86,8 @@ class Multiple extends Instance {
 
 	function load($q) {
 		$this->id = $this->find_id($q) ?:  get_the_id();
-		if(!$this->id) return $this->failed();
-		if(!$this->plugin->activate($this->id)) return $this->failed();
+		if(!$this->id) return $this->fail();
+		if(!$this->plugin->activate($this->id)) return $this->fail();
 
 		$this->slug      = $this->find_slug($this->id);
 		$this->post_type = $this->find_post_type($this->id);
