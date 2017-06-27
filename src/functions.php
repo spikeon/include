@@ -8,14 +8,20 @@
 	 * @global $wpdb The WordPress Database Object
 	 * @return boolean
 	 */
-	function id_exists($id){ global $wpdb; return $wpdb->get_var("SELECT count(*) FROM {$wpdb->posts} WHERE ID = '{$id}'") ? true : false; }
+	function id_exists($id) {
+		global $wpdb;
+		return $wpdb->get_var("SELECT count(*) FROM {$wpdb->posts} WHERE ID = '{$id}'") ? true : false;
+	}
 	/**
 	 * Get Plugin Options
 	 * @author Mike Flynn
 	 * @since 2.0
 	 * @return array
 	 */
-	function include_get_options(){ global $include_atts; return get_option('include_atts', $include_atts); }
+	function include_get_options(){
+		global $include_atts;
+		return get_option('include_atts', $include_atts);
+	}
 	
 	/**
 	 * Set Plugin Options
@@ -23,4 +29,8 @@
 	 * @since 2.0
 	 * @return array
 	 */
-	function include_set_options($arr){ global $include_atts; $atts = array_merge($include_atts, $arr); return update_option('include_atts', $atts ); }
+	function include_set_options($arr){
+		global $include_atts;
+		$atts = array_merge($include_atts, $arr);
+		return update_option('include_atts', $atts );
+	}
