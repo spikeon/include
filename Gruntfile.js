@@ -48,8 +48,10 @@ module.exports = function(grunt) {
                 dest: 'assets/icon.svg'
             },
             framework : {
-                src: ['framework/dist'],
-                dest: 'build'
+                expand: true,
+                cwd: 'framework',
+                src: ['**'],
+                dest: 'build/framework'
             },
             dist: {
                 expand: true,
@@ -144,6 +146,6 @@ module.exports = function(grunt) {
         'image_resize:icon_large',
         'clean:assets_post'
     ]);
-    grunt.registerTask('build', ['clean:init', 'copy:build', 'concat:readme', 'concat:readme_wp']);
+    grunt.registerTask('build', ['clean:init', 'copy:build', 'copy:framework', 'concat:readme', 'concat:readme_wp']);
     grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'clean:end']);
 };
