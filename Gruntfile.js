@@ -49,7 +49,7 @@ module.exports = function(grunt) {
             },
             framework : {
                 expand: true,
-                cwd: 'framework/dist',
+                cwd: 'framework/dist/',
                 src: ['**'],
                 dest: 'build/framework'
             },
@@ -84,7 +84,7 @@ module.exports = function(grunt) {
 
         clean : {
             init :        ['build', 'README.md'],
-            dist :        ['dist/*'],
+            dist :        ['dist'],
             assets_pre :  ['assets', 'thumb.png'],
             assets_post : ['icon.png'],
             end:          ['build'],
