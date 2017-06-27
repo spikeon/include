@@ -30,7 +30,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 	 */
 	protected $first = false;
 
-	protected $option_tips = [
+	public $option_tips = [
 		'title'			=> 'The type of element to wrap the title with.',
 		'title_class' 	=> 'A class to assign to the title wrap.',
 		'recursion' 	=> 'Strict will not run the shortcode on included child pages.',
@@ -85,7 +85,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 	 * @author Brendan McSweeney, Mike Flynn
 	 * @var array An array containing the tips for the options panel
 	 */
-	protected $shortcode_attributes_include = [
+	public $shortcode_attributes_include = [
 		'id' 			=> false,									// (required) The Page/Post Id to Include.  Default: none. Not required if slug is set.
 		'slug' 			=> false,									// (optional) The Page/Post Slug to Include. Not recomended as slugs can change.
 		'title' 		=> 'h2',									// (optional) Title Wrapper Element. Default: h2.
@@ -119,7 +119,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 	 * @author Brendan McSweeney, Mike Flynn
 	 * @var array An array containing the tips for the options panel
 	 */
-	protected $shortcode_attributes_include_children = [
+	public $shortcode_attributes_include_children = [
 		'id' 			=> false,									// (required) The Page/Post Id to Include.  Default: none. Not required if slug is set.
 		'slug' 			=> false,									// (optional) The Page/Post Slug to Include. Not recomended as slugs can change.
 		'title' 		=> 'h2',									// (optional) Title Wrapper Element. Default: h2.
