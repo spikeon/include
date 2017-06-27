@@ -115,6 +115,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 
 		return $this->render('multiple', $i);
 	}
+
 	/**
 	 * Default Include Children Shortcode Attributes
 	 *
