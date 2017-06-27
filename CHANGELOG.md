@@ -1,3 +1,7 @@
+= 3.4.23 =
+* Removing Banner
+* Adding Grunt and SH Builder
+
 = 3.4.22 =
 * Adding more stuff to package.json
 
