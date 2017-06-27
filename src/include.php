@@ -176,6 +176,6 @@ function include_children_shortcode ($atts, $content){
 
 function include_tags_test(){
 
-	return the_tags();
+	return get_the_tag_list();
 }
 add_shortcode('include_tags_test', 'include_tags_test');

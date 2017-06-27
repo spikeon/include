@@ -66,8 +66,9 @@ q
 fi
 
 grunt build
-
+grunt assets
 grunt dist
+
 
 git add .
 
