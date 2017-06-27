@@ -70,21 +70,23 @@ echo
 echo "Creating local copy of SVN repo ..."
 svn co $SVNURL $SVNPATH
 
+cd $SVNPATH
+
 echo "Ignoring github specific & deployment script"
 svn propset svn:ignore "deploy.sh
 README.md
 .git
 .gitignore" "$SVNPATH/trunk/"
 
-rm -rf $SVNPATH/trunk/*
-rm -rf $SVNPATH/assets/*
+svn delete trunk
+svn delete assets
 
-cp -r $DISTPATH/* $SVNPATH/trunk/.
-cp -r $ASSETPATH/* $SVNPATH/assets/.
+cp -r $DISTPATH trunk
+cp -r $ASSETPATH assets
 
-svn add $SVNPATH/assets/
+svn add trunk
+svn add assets
 
-cd $SVNPATH
 
 # Add all new files that are not set to be ignored
 svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2}' | xargs svn add

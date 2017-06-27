@@ -1,3 +1,6 @@
+= 3.4.25 =
+* How bout da?
+
 = 3.4.24 =
 * Oops, Deploy script slightly exploded
 
