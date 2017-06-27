@@ -43,6 +43,8 @@ versiony package.json --patch
 
 grunt build
 
+git add .
+
 STABLE=`grep "^Stable tag" $BUILDPATH/readme.txt | awk -F' ' '{print $3}'`
 VERSION=`grep "^ \* Version" $BUILDPATH/$MAINFILE | awk -F' ' '{print $3}'`
 
@@ -56,6 +58,8 @@ echo "Stable: $STABLE"
 echo "$MAINFILE version: $VERSION"
 
 grunt dist
+
+git add .
 
 git commit -am "$COMMITMSG"
 
