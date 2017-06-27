@@ -4,7 +4,7 @@ Contributors: mflynn, cngann, Clear_Code, bmcswee, flynndev
 Tags: shortcode,shortcodes,page,pages,post,posts,loop,the loop,include,include other post,include other page,get,utilities,fetch,content
 Requires at least: 2.5
 Tested up to: 4.4.1
-Stable tag: 3.4.27
+Stable tag: 3.4.32
 License: GPL-3.0
 License URI: https://spdx.org/licenses/GPL-3.0.html
 
@@ -92,6 +92,12 @@ If an ID is given it includes the child pages of that page, in order.
 
 
 == Changelog ==
+
+= 3.4.29 =
+* Are we final?
+
+= 3.4.28 =
+* Ugh.
 
 = 3.4.27 =
 * Yay, let's make this work one of these years.

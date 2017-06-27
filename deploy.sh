@@ -27,17 +27,15 @@ SVNUSER="mflynn"                                    # your svn username
 
 git add .
 
-while [[ -z "$CHANGELOG" ]]; do
-    printf '%s\n' '' '# Changes:' '# Example:' '# * added changelog' > /tmp/deploy_script_changelog.txt
+while [[ -z "$COMMITMSG" ]]; do
+    printf '%s\n' '' '# Commit Message' '# Lines starting with asterix are placed in the changelog' '# Lines starting with + are placed in the Upload Notices' > /tmp/deploy_script_changelog.txt
     $EDITOR /tmp/deploy_script_changelog.txt
-    CHANGELOG=`grep "^[^#]" /tmp/deploy_script_changelog.txt`
+    COMMITMSG=`grep "^[^#]" /tmp/deploy_script_changelog.txt`
 done
 
-COMMITMSG=$CHANGELOG
+CHANGELOG=`echo "$COMMITMSG" | grep "^[*]"`
+UPGRADENOTICE=`echo "$COMMITMSG" | grep "^[+]"`
 
-printf '%s\n' '' '# Changes:' '# Example:' '# * Fixed that major bug guys, sorry'  > /tmp/deploy_script_upgrade.txt
-$EDITOR /tmp/deploy_script_upgrade.txt
-UPGRADENOTICE=`grep "^[^#]" /tmp/deploy_script_upgrade.txt`
 
 versiony package.json --patch
 
@@ -48,31 +46,30 @@ git add .
 STABLE=`grep "^Stable tag" $BUILDPATH/readme.txt | awk -F' ' '{print $3}'`
 VERSION=`grep "^ \* Version" $BUILDPATH/$MAINFILE | awk -F' ' '{print $3}'`
 
-printf '%s\n' "= $VERSION =" "$CHANGELOG" '' "`cat readme/CHANGELOG.md`" > readme/CHANGELOG.md
+if [[ ! -z "$CHANGELOG" ]]; then
+    printf '%s\n' "= $VERSION =" "$CHANGELOG" '' "`cat readme/CHANGELOG.md`" > readme/CHANGELOG.md
+fi
 
 if [[ ! -z "$UPGRADENOTICE" ]]; then
-printf '%s\n' "= $VERSION =" "$UPGRADENOTICE" '' "`cat readme/UPGRADE_NOTICE.md`" > readme/UPGRADE_NOTICE.md
+    printf '%s\n' "= $VERSION =" "$UPGRADENOTICE" '' "`cat readme/UPGRADE_NOTICE.md`" > readme/UPGRADE_NOTICE.md
 fi
 
 echo "Stable: $STABLE"
 echo "$MAINFILE version: $VERSION"
 
+if [[ ! -z "$1" ]]; then
+echo "Making this version stable"
+echo "%s/$STABLE/$VERSION/g
+w
+q
+" | ex package.json
+fi
+
+grunt build
+
 grunt dist
 
 git add .
-
-git commit -am "$COMMITMSG"
-
-echo "Tagging new version in git"
-git tag -a "$VERSION" -m "Tagging version $VERSION"
-
-echo "Pushing latest commit to portfolio, with tags"
-
-git push origin master
-git push origin master --tags
-
-git push portfolio master
-git push portfolio master --tags
 
 echo
 echo "Creating local copy of SVN repo ..."
@@ -89,18 +86,15 @@ cp -r $ASSETPATH assets
 svn add trunk
 svn add assets
 
-
 # Add all new files that are not set to be ignored
 svn status | grep -v "^.[ \t]*\..*" | grep "^?" | awk '{print $2}' | xargs svn add
 
 echo "committing to trunk"
 svn commit --username=$SVNUSER -m "$COMMITMSG"
 
-echo "Updating WP plugin repo assets & committing"
 cd $SVNPATH/assets/
-svn commit --username=$SVNUSER -m "Updating wp-repo-assets"
+svn commit --username=$SVNUSER -m "Updating assets"
 
-echo "Creating new SVN tag & committing it"
 cd $SVNPATH
 svn copy trunk/ tags/$VERSION/
 cd $SVNPATH/tags/$VERSION
@@ -108,5 +102,25 @@ svn commit --username=$SVNUSER -m "Tagging version $VERSION"
 
 echo "Removing temporary directory $SVNPATH"
 rm -fr $SVNPATH/
+
+grunt clean:pre_git_push
+
+cd $GITPATH
+
+git add .
+
+git commit -am "$COMMITMSG"
+
+echo "Tagging new version in git"
+git tag -a "$VERSION" -m "Tagging version $VERSION"
+
+echo "Pushing latest commit to portfolio, with tags"
+
+git push origin master
+git push origin master --tags
+
+git push portfolio master
+git push portfolio master --tags
+
 
 echo "*** FIN ***"

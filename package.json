@@ -2,8 +2,8 @@
   "name": "include",
   "title": "Include",
   "description": "Include one Page or Post into another.",
-  "version": "3.4.28",
-  "stable": "3.4.27",
+  "version": "3.4.32",
+  "stable": "3.4.32",
   "wp_requires": "2.5",
   "wp_tested": "4.4.1",
   "tags": [

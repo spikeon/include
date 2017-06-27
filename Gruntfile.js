@@ -77,7 +77,8 @@ module.exports = function(grunt) {
             dist :        ['dist/*'],
             assets_pre :  ['assets', 'thumb.png'],
             assets_post : ['icon.png'],
-            end:          ['build']
+            end:          ['build'],
+            pre_git_push: ['assets']
         },
 
         "convert-svg-to-png" : {
