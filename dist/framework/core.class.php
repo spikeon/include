@@ -1,12 +1,5 @@
 <?php
-/**
- * Package:  WordPress Plugin Framework
- * Version:  1.1.60
- * Date:     27-06-2017
- * Copyright 2017 Mike Flynn - mflynn@flynndev.us
- */ 
- 
-
+//banner
 
 namespace PluginFramework\V_1_1;
 
