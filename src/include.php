@@ -12,9 +12,9 @@
 
 
 require_once ('../framework/dist/load.php');
-require_once( './wp.trait.php' );
+require_once( 'wp.trait.php' );
 
-require_once( './Instance.class.php' );
+require_once( 'Instance.class.php' );
 require_once ('plugin.class.php');
 
 $Include = new IncludePlugin\Plugin("include", '%ver%', __FILE__);
