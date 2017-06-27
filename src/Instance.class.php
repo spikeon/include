@@ -36,7 +36,7 @@ class Single extends Instance {
 	function load($q) {
 		$this->id = $this->find_id($q);
 		if(!$this->id) return false;
-		if(!$this->plugin->activate($this->id)) return false;
+		//if(!$this->plugin->activate($this->id)) return false;
 
 		$this->slug      = $this->find_slug($this->id);
 		$this->post_type = $this->find_post_type($this->id);
@@ -61,7 +61,7 @@ class Single extends Instance {
 			'element'   => $this->attributes['wrap'],
 			'class'     => $this->attributes['wrap_class']
 		];
-		$this->plugin->deactivate($this->id);
+		//$this->plugin->deactivate($this->id);
 		$this->unload_wp_query();
 	}
 
@@ -90,14 +90,14 @@ class Multiple extends Instance {
 	function load($q) {
 		$this->id = $this->find_id($q) ?:  get_the_id();
 		if(!$this->id)  return false;
-		if(!$this->plugin->activate($this->id)) return false;
+		//if(!$this->plugin->activate($this->id)) return false;
 
 		$this->slug      = $this->find_slug($this->id);
 		$this->post_type = $this->find_post_type($this->id);
 
 		$children = get_children( [ 'post_parent' => $this->id, 'post_type'   => $this->post_type, 'numberposts' => -1, 'post_status' => 'publish' ] );
 		foreach( (array) $children as $page_child_id => $page_child ) $this->addChild($page_child_id);
-		$this->plugin->deactivate($this->id);
+		//$this->plugin->deactivate($this->id);
 	}
 
 	function view() {
