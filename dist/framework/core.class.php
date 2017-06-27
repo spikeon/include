@@ -14,8 +14,7 @@ abstract class Core{
 		$this->setRoot($file);
 
 		$this->setMenuTitle($name);
-
-		$this->init_data();
+		
 		$this->init_view();
 		$this->init_hooks();
 		$this->init_shortcodes();
