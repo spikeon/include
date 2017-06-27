@@ -20,6 +20,7 @@ while getopts ":sm:" opt; do
       # Make Stable
         do_stable=true
       ;;
+
     m)
       # Sending In msg
       COMMITMSG="$OPTARG"
@@ -53,8 +54,6 @@ SVNPATH="/tmp/$PLUGINSLUG"                          # path to a temp SVN repo. N
 SVNURL="http://plugins.svn.wordpress.org/include/"  # Remote SVN repo on wordpress.org, with no trailing slash
 SVNUSER="mflynn"                                    # your svn username
 
-git add .
-
 while [[ -z "$COMMITMSG" ]]; do
     printf '%s\n' '' '# Commit Message' '# Lines starting with asterix are placed in the changelog' '# Lines starting with + are placed in the Upload Notices' > /tmp/deploy_script_changelog.txt
     $EDITOR /tmp/deploy_script_changelog.txt
@@ -64,12 +63,9 @@ done
 CHANGELOG=`echo "$COMMITMSG" | grep "^[*]"`
 UPGRADENOTICE=`echo "$COMMITMSG" | grep "^[+]"`
 
-
 versiony package.json --patch
 
 grunt build
-
-git add .
 
 STABLE=`grep "^Stable tag" $BUILDPATH/readme.txt | awk -F' ' '{print $3}'`
 VERSION=`grep "^ \* Version" $BUILDPATH/$MAINFILE | awk -F' ' '{print $3}'`
@@ -103,10 +99,7 @@ echo
 echo "Creating local copy of SVN repo ..."
 svn co $SVNURL $SVNPATH
 
-
 cd $SVNPATH
-
-svn propset svn:global-ignores ".svnignore" .
 
 svn delete trunk
 svn delete assets

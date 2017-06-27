@@ -9,6 +9,8 @@
  * License: GPL2
  */
 
+require('../framework/dist/load.php');
+
 /**
  * Current Included Posts
  *

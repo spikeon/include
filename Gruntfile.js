@@ -4,7 +4,11 @@ module.exports = function(grunt) {
 
     let version = package.version;
 
-    let apply_version = function (content) { return content.replace(/%ver%/g, version) };
+    let filter_php = function (content) {
+        return content
+            .replace(/%ver%/g, version) // Version Number
+            .replace("../framework/dist", 'framework')
+    };
 
     grunt.initConfig({
 
@@ -24,7 +28,7 @@ module.exports = function(grunt) {
                 src: '**',
                 dest: 'build/',
                 options : {
-                    process : apply_version
+                    process : filter_php
                 }
             },
             gallery: {
@@ -44,7 +48,7 @@ module.exports = function(grunt) {
                 dest: 'assets/icon.svg'
             },
             framework : {
-                src: ['framework'],
+                src: ['framework/dist'],
                 dest: 'build'
             },
             dist: {
