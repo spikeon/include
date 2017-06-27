@@ -173,3 +173,9 @@ function include_children_shortcode ($atts, $content){
 	foreach( (array) $page_children as $page_child_id => $page_child ) $r .= do_shortcode("[include id=\"{$page_child_id}\" {$attributes_string}]");
 	return $r;
 }
+
+function include_tags_test(){
+
+	return the_tags();
+}
+add_shortcode('include_tags_test', 'include_tags_test');
