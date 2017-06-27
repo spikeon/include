@@ -62,7 +62,7 @@ git tag -a "$VERSION" -m "Tagging version $VERSION"
 
 echo "Pushing latest commit to portfolio, with tags"
 git push portfolio master
-git push portfilio master --tags
+git push portfolio master --tags
 
 echo
 echo "Creating local copy of SVN repo ..."

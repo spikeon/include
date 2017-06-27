@@ -1,7 +1,8 @@
 {
   "name": "include",
-  "description": "Include Plugin",
-  "version": "3.4.21",
+  "title": "Include",
+  "description": "Include one Page or Post into another.",
+  "version": "3.4.22",
   "stable": "3.3",
   "wp_requires": "2.5",
   "wp_tested": "4.4.1",
@@ -11,8 +12,26 @@
     "Php",
     "Open Source"
   ],
+  "keywords": [
+    "shortcode",
+    "shortcodes",
+    "page",
+    "pages",
+    "post",
+    "posts",
+    "loop",
+    "the loop",
+    "include",
+    "include other post",
+    "include other page",
+    "get",
+    "utilities",
+    "fetch",
+    "content"
+  ],
   "author": "Mike Flynn <mflynn@flynndev.us>",
-  "license": "GPL3",
+  "license": "GPL-3.0",
+  "license_url": "https://spdx.org/licenses/GPL-3.0.html",
   "main": "Gruntfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
