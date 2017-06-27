@@ -72,7 +72,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 	 */
 	function shortcode_include ($a, $content){
 
-		$i = new Single($a['id'] ?: $a['slug'] ?: $content, $this->atts($a, 'include'), $this);
+		$i = new Single($a['id'] ?: $a['slug'] ?: $content, $this->atts('include', $a), $this);
 
 		if(!$this->activate($i->id)) $i->fail();
 
@@ -109,7 +109,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 	 */
 	function shortcode_include_children ($a, $content){
 
-		$i = new Multiple($a['id'] ?: $a['slug'] ?: $content, $this->atts($a, 'include_children') , $this);
+		$i = new Multiple($a['id'] ?: $a['slug'] ?: $content, $this->atts('include_children', $a) , $this);
 
 		if(!$this->activate($i->id)) $i->fail();
 
