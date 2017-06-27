@@ -4,7 +4,7 @@ Contributors: mflynn, cngann, Clear_Code, bmcswee, flynndev
 Tags: shortcode,shortcodes,page,pages,post,posts,loop,the loop,include,include other post,include other page,get,utilities,fetch,content
 Requires at least: 2.5
 Tested up to: 4.4.1
-Stable tag: 3.4.32
+Stable tag: 3.4.33
 License: GPL-3.0
 License URI: https://spdx.org/licenses/GPL-3.0.html
 
@@ -79,59 +79,15 @@ These parameters are depreciated, but still supported (for now).
 Same as Include, except that if no ID is given, it includes all child pages of the current page, in order.
 If an ID is given it includes the child pages of that page, in order.
 
-= Future Plans =
-
-* TinyMCE Integration - Waiting on WP 3.9 (TinyMCE v4)
- * Buttons to create/edit the include shortcode
- * Have the editor display included content, and update included pages on save
-* Add button/modal like "Add Media" to generate shortcodes for the user and place them in the editor
-
-
 == Screenshots ==
 
 
 
 == Changelog ==
 
-= 3.4.29 =
-* Are we final?
-
-= 3.4.28 =
-* Ugh.
-
-= 3.4.27 =
-* Yay, let's make this work one of these years.
-
-= 3.4.25 =
-* How bout da?
-
-= 3.4.24 =
-* Oops, Deploy script slightly exploded
-
 = 3.4.23 =
 * Removing Banner
 * Adding Grunt and SH Builder
-
-= 3.4.22 =
-* Adding more stuff to package.json
-
-= 3.4.21 =
-* Oops, Let's fix that
-
-= 3.4.20 =
-* This should push live
-
-= 3.4.19 =
-* Testing Junk in the Trunk
-
-= 3.4.17 =
-* Testing Again
-
-= 3.4.16 =
-* Testing Empty Upgrade Notice 
-
-= 3.4.15 =
-* Testing Changelog  
 
 = 3.4.0 =
 * Adding Auto-Deploy Script
@@ -194,9 +150,6 @@ If an ID is given it includes the child pages of that page, in order.
 
 
 == Upgrade Notices ==
-
-= 3.4.15 =
-* Testing Upgrade Notice 
 
 = 3.2 =
 * Fixed Bug: Title remained constant across multiple includes.

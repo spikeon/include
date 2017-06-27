@@ -1,4 +1,4 @@
-Include - 3.4.32
+Include - 3.4.33
 ===
 
 The Include plugin for WordPress allows you to include the content of one page, post, or other such WordPress object into any other with a shortcode.
@@ -67,10 +67,3 @@ These parameters are depreciated, but still supported (for now).
 
 Same as Include, except that if no ID is given, it includes all child pages of the current page, in order.
 If an ID is given it includes the child pages of that page, in order.
-
-= Future Plans =
-
-* TinyMCE Integration - Waiting on WP 3.9 (TinyMCE v4)
- * Buttons to create/edit the include shortcode
- * Have the editor display included content, and update included pages on save
-* Add button/modal like "Add Media" to generate shortcodes for the user and place them in the editor

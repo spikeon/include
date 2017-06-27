@@ -1,42 +1,6 @@
-= 3.4.29 =
-* Are we final?
-
-= 3.4.28 =
-* Ugh.
-
-= 3.4.27 =
-* Yay, let's make this work one of these years.
-
-= 3.4.25 =
-* How bout da?
-
-= 3.4.24 =
-* Oops, Deploy script slightly exploded
-
 = 3.4.23 =
 * Removing Banner
 * Adding Grunt and SH Builder
-
-= 3.4.22 =
-* Adding more stuff to package.json
-
-= 3.4.21 =
-* Oops, Let's fix that
-
-= 3.4.20 =
-* This should push live
-
-= 3.4.19 =
-* Testing Junk in the Trunk
-
-= 3.4.17 =
-* Testing Again
-
-= 3.4.16 =
-* Testing Empty Upgrade Notice 
-
-= 3.4.15 =
-* Testing Changelog  
 
 = 3.4.0 =
 * Adding Auto-Deploy Script

@@ -1,6 +1,3 @@
-= 3.4.15 =
-* Testing Upgrade Notice 
-
 = 3.2 =
 * Fixed Bug: Title remained constant across multiple includes.
 
