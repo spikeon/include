@@ -24,7 +24,7 @@ abstract class Instance {
 	function fail(){
 		$this->failed = true;
 
-		$this->debug($this);
+		$this->plugin->debug($this);
 
 		return false;
 	}
@@ -32,11 +32,7 @@ abstract class Instance {
 	abstract protected function load($q);
 
 	function __construct($q, $a,  &$plugin) {
-
-		var_dump($q);
-		var_dump($a);
-
-		$this->plugin = $plugin;
+		$this->plugin = &$plugin;
 		$this->wp_globs();
 		unset($a['id'], $a['slug']);
 		$this->attributes = $a;
