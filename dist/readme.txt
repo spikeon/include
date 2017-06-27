@@ -4,7 +4,7 @@ Contributors: mflynn, cngann, Clear_Code, bmcswee, flynndev
 Tags: shortcode,shortcodes,page,pages,post,posts,loop,the loop,include,include other post,include other page,get,utilities,fetch,content
 Requires at least: 2.5
 Tested up to: 4.8
-Stable tag: 3.4.36
+Stable tag: 3.4.41
 License: GPL-3.0
 License URI: https://spdx.org/licenses/GPL-3.0.html
 
@@ -85,6 +85,9 @@ If an ID is given it includes the child pages of that page, in order.
 
 == Changelog ==
 
+= 3.4.41 =
+* Fixed Tag Overriding Error 
+
 = 3.4.23 =
 * Removing Banner
 * Adding Grunt and SH Builder
@@ -150,6 +153,9 @@ If an ID is given it includes the child pages of that page, in order.
 
 
 == Upgrade Notices ==
+
+= 3.4.41 =
++ Fixed Tag Overriding Error
 
 = 3.2 =
 * Fixed Bug: Title remained constant across multiple includes.

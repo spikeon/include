@@ -1,3 +1,6 @@
+= 3.4.41 =
++ Fixed Tag Overriding Error
+
 = 3.2 =
 * Fixed Bug: Title remained constant across multiple includes.
 

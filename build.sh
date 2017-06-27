@@ -19,7 +19,6 @@ done
 CHANGELOG=`echo "$COMMITMSG" | grep "^[*]"`
 UPGRADENOTICE=`echo "$COMMITMSG" | grep "^[+]"`
 
-
 versiony package.json --patch
 
 grunt build

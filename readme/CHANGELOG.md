@@ -1,3 +1,6 @@
+= 3.4.41 =
+* Fixed Tag Overriding Error 
+
 = 3.4.23 =
 * Removing Banner
 * Adding Grunt and SH Builder
