@@ -24,7 +24,7 @@ abstract class Instance {
 	function fail(){
 		$this->failed = true;
 
-		echo "<pre>".var_export($this)."</pre>";
+		$this->debug($this);
 
 		return false;
 	}
