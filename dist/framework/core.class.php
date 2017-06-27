@@ -5,7 +5,7 @@ namespace PluginFramework\V_1_1;
 
 abstract class Core{
 
-	use PluginInfo, Helpers, Hooks, Errors, View, Data, Shortcode, Security, Resources, Pages;
+	use PluginInfo, Helpers, Hooks, Errors, View, Data, Shortcode, Security, Styles, Scripts, Pages;
 
 	function init($name, $ver, $file) {
 		$this->setPrefix($name);
