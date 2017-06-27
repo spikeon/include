@@ -23,6 +23,9 @@ abstract class Instance {
 
 	function fail(){
 		$this->failed = true;
+
+		echo "<pre>".var_export($this)."</pre>";
+
 		return false;
 	}
 
@@ -30,10 +33,9 @@ abstract class Instance {
 
 	function __construct($q, $a,  &$plugin) {
 
-		echo "== Plugin Init ==";
 		var_dump($q);
 		var_dump($a);
-		var_dump($plugin);
+
 		$this->plugin = $plugin;
 		$this->wp_globs();
 		unset($a['id'], $a['slug']);
