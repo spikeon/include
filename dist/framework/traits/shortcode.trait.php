@@ -2,7 +2,7 @@
 	namespace PluginFramework\V_1_1;
 	trait Shortcode {
 
-		public $shortcode_prefix = '';
+		public $shortcode_prefix = false;
 		private $shortcodes     = [];
 
 		/**
@@ -18,8 +18,8 @@
 		 *
 		 * @param string $prefix Prefix
 		 */
-		public function setShortcodePrefix($prefix){
-			$this->shortcode_prefix = $this->sterilize($prefix);
+		public function setShortcodePrefix($prefix, $force = false) {
+			if($this->prefix === false || $force) $this->shortcode_prefix = $this->sterilize($prefix);
 		}
 
 		public function getShortcodePrefix() {
@@ -38,7 +38,7 @@
 
 			foreach($args as $arg) if(!empty($arg)) $pieces[] = $this->sterilize($arg);
 
-			return $this->shortcode_prefix . implode('_', $pieces);
+			return $this->getShortcodePrefix() . implode('_', $pieces);
 		}
 
 		/**
@@ -92,7 +92,7 @@
 		}
 
 		protected function loadAttributes($shortcode){
-			$this->attributes[$shortcode] = $this->pull($this->shortcode_pre($shortcode, 'atts'), $this->default_attributes[$shortcode]);
+			$this->attributes[$shortcode] = $this->pull($this->concat($shortcode, 'atts'), $this->default_attributes[$shortcode]);
 		}
 
 		protected function atts($shortcode, $a) {

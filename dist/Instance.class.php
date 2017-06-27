@@ -28,7 +28,8 @@ abstract class Instance {
 
 	abstract protected function load($q);
 
-	function __construct($q, $a,  $plugin) {
+	function __construct($q, $a,  &$plugin) {
+		$this->plugin =& $plugin;
 		$this->wp_globs();
 		unset($a['id'], $a['slug']);
 		$this->attributes = $a;
@@ -40,6 +41,7 @@ class Single   extends Instance {
 	function load($q) {
 		$this->id = $this->find_id($q);
 		if(!$this->id) return false;
+		if(!$this->plugin->activate($this->id)) return false;
 
 		$this->slug      = $this->find_slug($this->id);
 		$this->post_type = $this->find_post_type($this->id);
@@ -64,7 +66,7 @@ class Single   extends Instance {
 			'element'   => $this->attributes['wrap'],
 			'class'     => $this->attributes['wrap_class']
 		];
-
+		$this->plugin->deactivate($this->id);
 		$this->unload_wp_query();
 	}
 
@@ -75,24 +77,20 @@ class Multiple extends Instance {
 	public $children = [];
 
 	protected function addChild($id){
-
-		$i = new Single($id, $this->attributes);
-
-		if(!$this->activate($i->id)) $i->fail();
-
-		$this->children[] = &$i;
+		$this->children[] = new Single($id, $this->attributes, $this->plugin);
 	}
 
 	function load($q) {
 		$this->id = $this->find_id($q) ?:  get_the_id();
 		if(!$this->id) return false;
+		if(!$this->plugin->activate($this->id)) return false;
 
 		$this->slug      = $this->find_slug($this->id);
 		$this->post_type = $this->find_post_type($this->id);
 
 		$children = get_children( [ 'post_parent' => $this->id, 'post_type'   => $this->post_type, 'numberposts' => -1, 'post_status' => 'publish' ] );
 		foreach( (array) $children as $page_child_id => $page_child ) $this->addChild($page_child_id);
-
+		$this->plugin->deactivate($this->id);
 	}
 
 }
