@@ -9,7 +9,7 @@ trait WP {
 
 	function fail($msg = false){
 		$this->failed = true;
-		if(isset($this->plugin) $this->plugin->debug($msg ?: $this);
+		if(isset($this->plugin)) $this->plugin->debug( $msg ?: $this);
 		else $this->debug($msg ?: $this);
 		return false;
 	}
