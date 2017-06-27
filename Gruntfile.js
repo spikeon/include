@@ -78,7 +78,7 @@ module.exports = function(grunt) {
             assets_pre :  ['assets', 'thumb.png'],
             assets_post : ['icon.png'],
             end:          ['build'],
-            pre_git_push: ['assets']
+            prepush:      ['assets']
         },
 
         "convert-svg-to-png" : {
@@ -136,8 +136,8 @@ module.exports = function(grunt) {
         'image_resize:icon_large',
         'clean:assets_post'
     ]);
-    grunt.registerTask('build', ['clean:init', 'assets', 'copy:build', 'concat:readme', 'concat:readme_wp']);
-    grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'clean:end']);
+    grunt.registerTask('build', ['clean:init', 'copy:build', 'concat:readme', 'concat:readme_wp']);
+    grunt.registerTask('dist', ['assets', 'clean:dist', 'copy:dist', 'clean:end']);
 
 
 

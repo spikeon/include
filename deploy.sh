@@ -103,7 +103,7 @@ svn commit --username=$SVNUSER -m "Tagging version $VERSION"
 echo "Removing temporary directory $SVNPATH"
 rm -fr $SVNPATH/
 
-grunt clean:pre_git_push
+grunt clean:prepush
 
 cd $GITPATH
 
