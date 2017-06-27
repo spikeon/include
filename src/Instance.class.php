@@ -60,8 +60,9 @@ class Single extends Instance {
 			'element'   => $this->attributes['wrap'],
 			'class'     => $this->attributes['wrap_class']
 		];
-		$plugin->deactivate($this->id);
 		$this->unload_wp_query();
+
+		$plugin->deactivate($this->id);
 	}
 
 	function view() {
