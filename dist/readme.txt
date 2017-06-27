@@ -4,7 +4,7 @@ Contributors: mflynn, cngann, Clear_Code, bmcswee, flynndev
 Tags: shortcode,shortcodes,page,pages,post,posts,loop,the loop,include,include other post,include other page,get,utilities,fetch,content
 Requires at least: 2.5
 Tested up to: 4.8
-Stable tag: 3.4.45
+Stable tag: 3.4.46
 License: GPL-3.0
 License URI: https://spdx.org/licenses/GPL-3.0.html
 

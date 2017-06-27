@@ -49,7 +49,7 @@ module.exports = function(grunt) {
             },
             framework : {
                 expand: true,
-                cwd: 'framework',
+                cwd: 'framework/dist',
                 src: ['**'],
                 dest: 'build/framework'
             },
