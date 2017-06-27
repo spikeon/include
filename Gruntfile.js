@@ -43,6 +43,10 @@ module.exports = function(grunt) {
                 src: ['icon.svg'],
                 dest: 'assets/icon.svg'
             },
+            framework : {
+                src: ['framework'],
+                dest: 'build'
+            },
             dist: {
                 expand: true,
                 cwd: 'build',
