@@ -30,7 +30,7 @@ echo
 
 # Check version in readme.txt is the same as plugin file
 STABLE=`grep "^Stable tag" $GITPATH/readme.txt | awk -F' ' '{print $3}'`
-VERSION=`grep "^ \* Version" $GITPATH/$MAINFILE | awk -F' ' '{print $2}'`
+VERSION=`grep "^ \* Version" $GITPATH/$MAINFILE | awk -F' ' '{print $3}'`
 
 echo "Stable: $STABLE"
 echo "$MAINFILE version: $VERSION"
