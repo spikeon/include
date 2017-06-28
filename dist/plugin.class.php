@@ -59,6 +59,8 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 
 		$i = new Single($a['id'] ?: $a['slug'] ?: $content, $a , $this);
 
+		$this->debug($i);
+
 		return $this->render('include', $i->view() );
 
 	}
