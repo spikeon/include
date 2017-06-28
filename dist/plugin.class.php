@@ -135,7 +135,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 	 */
 	function __construct($name, $ver, $file) {
 		$this->setShortcodePrefix("");
-
+		$this->running[get_the_id()] = true;
 		$this->init($name, $ver, $file);
 	}
 }
