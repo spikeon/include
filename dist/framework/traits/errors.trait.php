@@ -27,12 +27,16 @@
 			wp_die( __( $this->errors[$name] . "<br>" . $msg ) );
 		}
 
-		public function debug($dump){
+		public function debug($dump, $backtrace){
 
 			echo "<b>Data:</b><br><pre>";
 			var_export($dump);
-			echo "</pre><b>Backtrace:</b><br>";
-			debug_print_backtrace();
+			echo "</pre>";
+			if($backtrace){
+				echo "<b>Backtrace:</b><br><pre>";
+				debug_print_backtrace();
+				echo "</pre>";
+			}
 
 		}
 
