@@ -137,7 +137,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 			'title'			=> 'The type of element to wrap the title with.',
 			'title_class' 	=> 'A class to assign to the title wrap.',
 			'recursion' 	=> 'Strict will not run the shortcode on included child pages.',
-			'hr' 			=> 'Set to anything other than blank to insert a horizontal rule before included content.',
+			'hr' 			=> 'insert a horizontal rule before included content.',
 			'wrap'			=> 'Element to wrap included content with.',
 			'wrap_class'	=> 'A class to assign to the wrap.'
 		];
@@ -153,7 +153,9 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 			$view['attributes'][] = [
 				'name'          => $key,
 				'title'         => ucwords(strtolower(str_replace('_', ' ', $key))),
-				'has_options'   => $key == 'recursion' ,
+				'is_select'     => $key == 'recursion' ,
+				'is_checkbox'   => $key == 'hr',
+				'is_text'       => ! $key == 'recursion' || ! $key == 'hr',
 				'options'       => $key == 'recursion' ? [ [ "option" => "strict", "name" => "Strict", "selected" => $attribute == 'strict' ], [ "option" => "weak", "name" => "Weak", "selected" => $attribute == 'weak' ] ] : [],
 				'value'         => $attribute,
 				'tip'           => $tip

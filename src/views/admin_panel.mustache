@@ -15,7 +15,7 @@
 
 						<td>
 
-							{{#has_options}}
+							{{#is_select}}
 								<select name="{{form_name}}[{{name}}]" id="{{name}}" style="width:350px;">
 
 									{{#options}}
@@ -23,11 +23,15 @@
 									{{/options}}
 
 								</select>
-							{{/has_options}}
+							{{/is_select}}
 
-							{{^has_options}}
+							{{#is_text}}
 								<input type="text" name="{{form_name}}[{{name}}]" id="{{name}}" class="regular-text code" value="{{value}}">
-							{{/has_options}}
+							{{/is_text}}
+
+							{{#is_checkbox}}
+								<input type="checkbox" name="{{form_name}}[{{name}}]" id="{{name}}" value="y">
+							{{/is_checkbox}}
 
 							<p class="description">{{tip}}</p>
 
