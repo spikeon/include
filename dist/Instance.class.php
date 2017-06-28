@@ -68,6 +68,9 @@ abstract class Instance {
 class Single extends Instance {
 
 	function load($identifier, $plugin) {
+		
+		$plugin->activate(get_the_id());
+
 		$this->id = $plugin->find_id($identifier);
 		if(!$this->id) return false;
 		if(!$plugin->activate($this->id)) return false;
