@@ -49,7 +49,7 @@ abstract class Instance {
 	function __construct($identifier, $a, $plugin) {
 		unset($a['id'], $a['slug']);
 		$this->attributes = $a;
-		$this->load($identifier , $plugin);
+		if(!$this->load($identifier , $plugin)) $this->failed = true;
 	}
 
 	/**
@@ -106,6 +106,7 @@ class Single extends Instance {
 
 	function view() {
 		return [
+			'failed'    => $this->failed,
 			'id'        => $this->id,
 			'slug'      => $this->slug,
 			'post_type' => $this->post_type,
@@ -144,6 +145,7 @@ class Multiple extends Instance {
 
 	function view() {
 		return [
+			'failed'    => $this->failed,
 			'id'        => $this->id,
 			'slug'      => $this->slug,
 			'post_type' => $this->post_type,
