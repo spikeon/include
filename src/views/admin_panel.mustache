@@ -7,10 +7,14 @@
 
 		<table class='form-table'>
 			<tbody>
-				<tr>
-					<th><label for='{{name}}'>{{title}}</label></th>
-					<td>
-						{{#attributes}}
+				{{#attributes}}
+					<tr>
+						<th>
+							<label for="{{name}}">{{title}}</label>
+						</th>
+
+						<td>
+
 							{{#has_options}}
 								<select name="{{form_name}}[{{name}}]" id="{{name}}" style="width:350px;">
 
@@ -22,14 +26,14 @@
 							{{/has_options}}
 
 							{{^has_options}}
-								<input type='text' name='{{form_name}}[{{name}}]' id='{{name}}' class='regular-text code' value="{{value}}">
+								<input type="text" name="{{form_name}}[{{name}}]" id="{{name}}" class="regular-text code" value="{{value}}">
 							{{/has_options}}
 
-							<p class='description'>{{tip}}</p>
+							<p class="description">{{tip}}</p>
 
-						{{/attributes}}
-					</td>
-				</tr>
+						</td>
+					</tr>
+				{{/attributes}}
 			</tbody>
 		</table>
 
