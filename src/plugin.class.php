@@ -30,14 +30,6 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 	 */
 	protected $first = false;
 
-	public $option_tips = [
-		'title'			=> 'The type of element to wrap the title with.',
-		'title_class' 	=> 'A class to assign to the title wrap.',
-		'recursion' 	=> 'Strict will not run the shortcode on included child pages.',
-		'hr' 			=> 'Set to anything other than blank to insert a horizontal rule before included content.',
-		'wrap'			=> 'Element to wrap included content with.',
-		'wrap_class'	=> 'A class to assign to the wrap.'
-	];
 
 	function activate($id) {
 		if(!isset($this->running[$id])) $this->running[$id] = false;
@@ -125,6 +117,51 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 		'wrap_class' 	=> 'included'    							// (optional) class assigned to the wrap. Default: included.
 	];
 
+
+	function page_include() {
+		$this->can();
+		$form_name = $this->pre('locations');
+		$updated = false;
+
+		if(!empty($_POST[$form_name])){
+			$this->setAttributes('include', $_POST['form_name']);
+			$this->setAttributes('include_children', $_POST['form_name']);
+			$updated = true;
+		}
+
+		$this->loadAttributes('include');
+
+		$attributes = $this->getAttributes('include');
+
+		$tips = [
+			'title'			=> 'The type of element to wrap the title with.',
+			'title_class' 	=> 'A class to assign to the title wrap.',
+			'recursion' 	=> 'Strict will not run the shortcode on included child pages.',
+			'hr' 			=> 'Set to anything other than blank to insert a horizontal rule before included content.',
+			'wrap'			=> 'Element to wrap included content with.',
+			'wrap_class'	=> 'A class to assign to the wrap.'
+		];
+
+		$view = [
+			'form_name' => $form_name,
+			'updated' => $updated,
+			'attributes' => [],
+		];
+
+		foreach($attributes as $key => $attribute) {
+			$view['attributes'][] = [
+				'name' => $key,
+				'title' => ucwords(strtolower(str_replace('_', ' ', $key))),
+				'has_options' => false,
+				'options' => $key == 'recursion' ? [ [ "option" => "strict", "name" => "Strict", "selected" => $attribute == 'strict' ], [ "option" => "weak", "name" => "Weak", "selected" => $attribute == 'weak' ] ] : [],
+				'value' => $attribute,
+				'tip' => $tips[$key]
+			];
+		}
+
+		echo $this->render('admin_panel', $view);
+
+	}
 
 	/**
 	 * Include Plugin constructor.
