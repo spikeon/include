@@ -124,8 +124,8 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 		$updated = false;
 
 		if(!empty($_POST[$form_name])){
-			$this->setAttributes('include', $_POST['form_name']);
-			$this->setAttributes('include_children', $_POST['form_name']);
+			$this->setAttributes('include', $_POST[$form_name]);
+			$this->setAttributes('include_children', $_POST[$form_name]);
 			$updated = true;
 		}
 
@@ -154,7 +154,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 				'title'         => ucwords(strtolower(str_replace('_', ' ', $key))),
 				'has_options'   => false,
 				'options'       => $key == 'recursion' ? [ [ "option" => "strict", "name" => "Strict", "selected" => $attribute == 'strict' ], [ "option" => "weak", "name" => "Weak", "selected" => $attribute == 'weak' ] ] : [],
-				'value'         => $attributes[$key],
+				'value'         => isset($attributes[$key]) ? $attributes[$key] : "",
 				'tip'           => $tip
 			];
 		}

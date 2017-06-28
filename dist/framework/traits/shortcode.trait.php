@@ -96,7 +96,7 @@
 		}
 
 		protected function loadAttributes($shortcode){
-			if(!isset($this->default_attributes[$shortcode])){
+			if(!isset($this->default_attributes[$shortcode]) || empty($this->default_attributes[$shortcode])){
 				if(isset($this->{'shortcode_attributes_'.$shortcode})){
 					$this->setDefaultAttributes($shortcode, $this->{'shortcode_attributes_'.$shortcode});
 				}
