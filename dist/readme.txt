@@ -4,7 +4,7 @@ Contributors: mflynn, cngann, Clear_Code, bmcswee, flynndev
 Tags: shortcode,shortcodes,page,pages,post,posts,loop,the loop,include,include other post,include other page,get,utilities,fetch,content
 Requires at least: 2.5
 Tested up to: 4.8
-Stable tag: 3.4.110
+Stable tag: 4.0.0
 License: GPL-3.0
 License URI: https://spdx.org/licenses/GPL-3.0.html
 
@@ -85,6 +85,10 @@ If an ID is given it includes the child pages of that page, in order.
 
 == Changelog ==
 
+= 4.0.0 =
+* Updated Include to use new WP_Query Method of nested looping instead of cloning $wpdb
+* Updated this to use my PluginFramework
+
 = 3.4.48 =
 * Adding Pugin Framework
 
@@ -156,6 +160,9 @@ If an ID is given it includes the child pages of that page, in order.
 
 
 == Upgrade Notices ==
+
+= 4.0.0 =
++ Please make sure you know what your options are before you update this plugin, as the update may lose those options.  Sorry, this is a complete rewrite of the plugin.
 
 = 3.4.41 =
 + Fixed Tag Overriding Error

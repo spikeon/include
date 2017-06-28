@@ -1,3 +1,6 @@
+= 4.0.0 =
++ Please make sure you know what your options are before you update this plugin, as the update may lose those options.  Sorry, this is a complete rewrite of the plugin.
+
 = 3.4.41 =
 + Fixed Tag Overriding Error
 

@@ -30,7 +30,15 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 	 */
 	protected $first = false;
 
-
+	/**
+	 * Activate Page/Post id
+	 *
+	 * Makes it so that we don't start an infinite loop
+	 *
+	 * @param $id
+	 *
+	 * @return bool
+	 */
 	function activate($id) {
 		if(!isset($this->running[$id])) $this->running[$id] = false;
 		if( $this->running[$id] === true) return false;
@@ -38,6 +46,13 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 		return true;
 	}
 
+	/**
+	 * Deactivate Page/Post id
+	 *
+	 * Makes it so that the same ID can be called multiple times, just not within itself
+	 *
+	 * @param $id
+	 */
 	function deactivate($id) {
 		$this->running[$id] = false;
 	}
@@ -48,7 +63,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 	 * Creates and returns the "include" shortcode
 	 *
 	 * @author Mike Flynn
-	 * @since 1.0
+	 * @since 4.0.0
 	 * @param $a The current shortcode attributes
 	 * @param $content Content inside of shortcode
 	 * @return string The shortcode content
@@ -61,7 +76,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 		$a = $this->atts('include', $a);
 
 		$i = new Single($id ?: $slug ?: $content, $a , $this);
-		
+
 		return $this->render('include', $i->view() );
 
 	}
@@ -90,8 +105,8 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 	 *
 	 * Creates and returns the "include_children" shortcode
 	 *
-	 * @since 2.0b
-	 * @author Brendan McSweeney
+	 * @since 4.0.0
+	 * @author Mike Flynn, Brendan McSweeney
 	 */
 	function shortcode_include_children ($a, $content){
 
@@ -123,7 +138,12 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 		'wrap_class' 	=> 'included'    							// (optional) class assigned to the wrap. Default: included.
 	];
 
-
+	/**
+	 * Admin Panel Page
+	 *
+	 * @since 4.0.0
+	 * @author Brendan McSweeney, Mike Flynn
+	 */
 	function page_include() {
 		$this->can();
 		$form_name = $this->pre('locations');
@@ -170,15 +190,11 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 		}
 
 		echo $this->render('admin_panel', $view);
-
 	}
 
 	/**
 	 * Include Plugin constructor.
 	 *
-	 * @global $wpdb The wordpress database object
-	 * @global $post The current post object
-	 * @global $wp_query The wp_query object
 	 * @param $name
 	 * @param $ver
 	 * @param $file

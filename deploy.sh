@@ -14,7 +14,7 @@
 do_stable=false
 COMMITMSG=""
 
-while getopts ":sm:" opt; do
+while getopts ":sm:v:" opt; do
   case $opt in
     s)
       # Make Stable
@@ -24,6 +24,11 @@ while getopts ":sm:" opt; do
     m)
       # Sending In msg
       COMMITMSG="$OPTARG"
+      ;;
+
+    v)
+      # Sending in Version Number
+      VERSION="$OPTARG"
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -63,7 +68,11 @@ done
 CHANGELOG=`echo "$COMMITMSG" | grep "^[*]"`
 UPGRADENOTICE=`echo "$COMMITMSG" | grep "^[+]"`
 
+if [[ -z "VERSION" ]]; then
 versiony package.json --patch
+else
+versiony package.json --version=$VERSION
+fi
 
 grunt build
 

@@ -1,3 +1,7 @@
+= 4.0.0 =
+* Updated Include to use new WP_Query Method of nested looping instead of cloning $wpdb
+* Updated this to use my PluginFramework
+
 = 3.4.48 =
 * Adding Pugin Framework
 
