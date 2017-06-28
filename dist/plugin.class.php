@@ -40,13 +40,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 	];
 
 	function activate($id) {
-		if(!$id) return false;
-		if(!$this->active) {
-			$this->active = true;
-			$this->first = $id;
-		}
-
-		if(empty($this->running[$id])) $this->running[$id] = false;
+		if(!isset($this->running[$id])) $this->running[$id] = false;
 		if( $this->running[$id] === true) return false;
 		$this->running[$id] = true;
 		return true;
@@ -54,11 +48,6 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 
 	function deactivate($id) {
 		$this->running[$id] = false;
-		if($id == $this->first) {
-			$this->active = false;
-			$this->first= false;
-		}
-		return true;
 	}
 
 	/**
