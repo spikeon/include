@@ -105,7 +105,7 @@
 		}
 
 		protected function atts($shortcode, $a = []) {
-			return shortcode_atts( $this->attributes[$shortcode] ?: [], $a, $this->shortcode_pre($shortcode));
+			return shortcode_atts( $this->getAttributes($shortcode) ?: [], $a, $this->shortcode_pre($shortcode));
 		}
 
 		/**
