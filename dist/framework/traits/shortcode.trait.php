@@ -87,6 +87,10 @@
 			$this->push($this->shortcode_pre($shortcode, 'atts'), $attributes);
 		}
 
+		protected function getAttributes($shortcode) {
+			return $this->attributes[$shortcode];
+		}
+
 		protected function setDefaultAttributes($shortcode, $attributes = []) {
 			$this->default_attributes[$shortcode] = $attributes;
 		}

@@ -63,11 +63,10 @@
 		 * @param string $s
 		 * @return string
 		 */
-		public function pre_to_title($s){
-			$s = preg_replace( '^[^_]+_', '', $s ); // Remove First Chunk
-			$s = str_replace("_", " ", $s);
-			$s = ucwords($s);
-			return $s;
+		public function pre_to_title($s) {
+			$a = explode('_', $s);
+			array_shift($a);
+			return ucwords(implode(" ", $a));
 		}
 
 	}
