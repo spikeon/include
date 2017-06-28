@@ -149,12 +149,13 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 		];
 
 		foreach($tips as $key => $tip) {
+			$attribute = isset($attributes[$key]) ? $attributes[$key] : "";
 			$view['attributes'][] = [
 				'name'          => $key,
 				'title'         => ucwords(strtolower(str_replace('_', ' ', $key))),
-				'has_options'   => false,
+				'has_options'   => $key == 'recursion' ,
 				'options'       => $key == 'recursion' ? [ [ "option" => "strict", "name" => "Strict", "selected" => $attribute == 'strict' ], [ "option" => "weak", "name" => "Weak", "selected" => $attribute == 'weak' ] ] : [],
-				'value'         => isset($attributes[$key]) ? $attributes[$key] : "",
+				'value'         => $attribute,
 				'tip'           => $tip
 			];
 		}
