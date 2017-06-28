@@ -155,7 +155,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 				'title'         => ucwords(strtolower(str_replace('_', ' ', $key))),
 				'is_select'     => $key == 'recursion' ,
 				'is_checkbox'   => $key == 'hr',
-				'is_text'       => ! $key == 'recursion' || ! $key == 'hr',
+				'is_text'       => $key != 'recursion' && $key != 'hr',
 				'options'       => $key == 'recursion' ? [ [ "option" => "strict", "name" => "Strict", "selected" => $attribute == 'strict' ], [ "option" => "weak", "name" => "Weak", "selected" => $attribute == 'weak' ] ] : [],
 				'value'         => $attribute,
 				'tip'           => $tip
