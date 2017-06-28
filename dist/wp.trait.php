@@ -5,19 +5,19 @@ trait WP {
 
 	public function &wpdb($set = false){
 		global $wpdb;
-		if($set) $wpdb = clone $set;
+		if($set) $wpdb = $set;
 		return $wpdb;
 	}
 
 	public function &wp_query($set = false){
 		global $wp_query;
-		if($set) $wp_query = clone $set;
+		if($set) $wp_query = $set;
 		return $wp_query;
 	}
 
 	public function &post($set = false){
 		global $post;
-		if($set) $post = clone $set;
+		if($set) $post = $set;
 		return $post;
 	}
 
@@ -32,7 +32,7 @@ trait WP {
 	public function find_id ($subject) {
 		if(!$subject) return false;
 		if(is_numeric($subject)) {
-			if(!$this->check_id($subject))return false;
+			if(!$this->check_id($subject)) return false;
 			return $subject * 1;
 		}
 		else {
@@ -51,7 +51,7 @@ trait WP {
 	}
 
 	public function unload_wp_query() {
-		$this->wpdb($this->query_stash);
+		$this->wpdb(clone $this->query_stash);
 		setup_postdata($this->post());
 	}
 
