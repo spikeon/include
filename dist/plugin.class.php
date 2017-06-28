@@ -62,7 +62,10 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 	 * @return string The shortcode content
 	 */
 	function shortcode_include ($a, $content){
-		$i = new Single($a['id'] ?: $a['slug'] ?: $content, $this->atts('include', $a), $this);
+
+		$a = $this->atts('include', $a);
+
+		$i = new Single($a['id'] ?: $a['slug'] ?: $content, $a , $this);
 
 		return $this->render('include', $i->view() );
 
@@ -97,7 +100,9 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 	 */
 	function shortcode_include_children ($a, $content){
 
-		$i = new Multiple($a['id'] ?: $a['slug'] ?: $content, $this->atts('include_children', $a) , $this);
+		$a = $this->atts('include_children', $a);
+
+		$i = new Multiple($a['id'] ?: $a['slug'] ?: $content, $a , $this);
 
 		return $this->render('multiple', $i->view());
 	}
