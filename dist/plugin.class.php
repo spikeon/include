@@ -148,7 +148,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 			'attributes' => [],
 		];
 
-		foreach($types as $key => $tip) {
+		foreach($tips as $key => $tip) {
 			$view['attributes'][] = [
 				'name'          => $key,
 				'title'         => ucwords(strtolower(str_replace('_', ' ', $key))),
