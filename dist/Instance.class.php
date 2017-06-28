@@ -45,6 +45,7 @@ abstract class Instance {
 	 * @param Plugin $plugin
 	 */
 	function __construct($q, $a, $plugin) {
+		var_dump($a);
 		unset($a['id'], $a['slug']);
 		$this->attributes = $a;
 		$this->load($q, $plugin);
