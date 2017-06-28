@@ -7,6 +7,10 @@ trait WP {
 	protected $query_stash;
 
 
+	function show_me($msg){
+		echo "<pre>".var_export($msg ?: $this, true)."</pre>";
+	}
+
 	function fail($msg = false){
 		$this->failed = true;
 

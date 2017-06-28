@@ -29,6 +29,10 @@ abstract class Instance {
 		$this->attributes = $a;
 		$this->load($q, $plugin);
 	}
+
+	function strip_nesting($content){
+		return preg_replace( "/\[include[^\]]*\]/im", "", $content);
+	}
 }
 
 class Single extends Instance {
@@ -44,7 +48,8 @@ class Single extends Instance {
 
 		$this->load_wp_query([$this->post_type == 'page' ? 'page_id' : 'p' => $this->id]);
 
-		$this->content   = apply_filters('the_content', strtolower($this->recursion) == "strict" ? preg_replace( "/\[include[^\]]*\]/im", "", get_the_content() ) : get_the_content());
+		$c = get_the_content();
+		$this->content   = apply_filters('the_content', strtolower($this->recursion) == "strict" ? $this->strip_nesting($c) : $c);
 
 		$this->hr        = $this->attributes['hr'];
 
@@ -63,6 +68,7 @@ class Single extends Instance {
 		$this->unload_wp_query();
 
 		$plugin->deactivate($this->id);
+		$this->show_me($this->view());
 	}
 
 	function view() {
