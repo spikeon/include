@@ -1,9 +1,6 @@
 <?php
 namespace IncludePlugin;
 abstract class Instance {
-	use WP;
-
-	protected $plugin;
 
 	public $id = false;
 	public $post_type = "";
@@ -20,11 +17,34 @@ abstract class Instance {
 
 	protected $attributes = [];
 
+	/**
+	 * Load Instance
+	 *
+	 * @since 4.0.0
+	 * @param $q
+	 * @param Plugin $plugin
+	 *
+	 * @return mixed
+	 */
 	abstract protected function load($q, $plugin);
+
+	/**
+	 * Generate View
+	 *
+	 * @since 4.0.0
+	 *
+	 * @return array
+	 */
 	abstract public function view();
 
+	/**
+	 * Instance constructor.
+	 *
+	 * @param $q
+	 * @param $a Attributes
+	 * @param Plugin $plugin
+	 */
 	function __construct($q, $a, $plugin) {
-		$this->wp_globs();
 		unset($a['id'], $a['slug']);
 		$this->attributes = $a;
 		$this->load($q, $plugin);
@@ -38,16 +58,16 @@ abstract class Instance {
 class Single extends Instance {
 
 	function load($q, $plugin) {
-		$this->id = $this->find_id($q);
+		$this->id = $plugin->find_id($q);
 		if(!$this->id) return false;
 		if(!$plugin->activate($this->id)) return false;
 
-		$this->slug      = $this->find_slug($this->id);
-		$this->post_type = $this->find_post_type($this->id);
+		$this->slug      = $plugin->find_slug($this->id);
+		$this->post_type = $plugin->find_post_type($this->id);
 
 		$this->recursion = $this->attributes['recursion'];
 
-		$this->load_wp_query([$this->post_type == 'page' ? 'page_id' : 'p' => $this->id]);
+		$plugin->load_wp_query([$this->post_type == 'page' ? 'page_id' : 'p' => $this->id]);
 
 		$c               = get_the_content();
 		$this->content   = apply_filters('the_content', strtolower($this->recursion) == "strict" ? $this->strip_nesting($c) : $c);
@@ -67,7 +87,7 @@ class Single extends Instance {
 			'class'     => $this->attributes['wrap_class']
 		];
 
-		$this->unload_wp_query();
+		$plugin->unload_wp_query();
 
 		$plugin->deactivate($this->id);
 
@@ -76,13 +96,13 @@ class Single extends Instance {
 
 	function view() {
 		return [
-			'id' => $this->id,
-			'slug' => $this->slug,
+			'id'        => $this->id,
+			'slug'      => $this->slug,
 			'post_type' => $this->post_type,
-			'content' => $this->content,
-			'hr' => $this->hr,
-			'title' => $this->title,
-			'wrap' => $this->wrap,
+			'content'   => $this->content,
+			'hr'        => $this->hr,
+			'title'     => $this->title,
+			'wrap'      => $this->wrap,
  		];
 	}
 
@@ -92,34 +112,36 @@ class Multiple extends Instance {
 
 	public $children = [];
 
-	protected function addChild($id){
-		$this->children[] = new Single($id, $this->attributes, $this->plugin);
+	protected function addChild($id, $plugin){
+		$this->children[] = new Single($id, $this->attributes, $plugin);
 	}
 
 	function load($q, $plugin) {
-		$this->id = $this->find_id($q) ?:  get_the_id();
+		$this->id = $plugin->find_id($q) ?:  get_the_id();
 		if(!$this->id)  return false;
 		if(!$plugin->activate($this->id)) return false;
 
-		$this->slug      = $this->find_slug($this->id);
-		$this->post_type = $this->find_post_type($this->id);
+		$this->slug      = $plugin->find_slug($this->id);
+		$this->post_type = $plugin->find_post_type($this->id);
 
 		$children = get_children( [ 'post_parent' => $this->id, 'post_type'   => $this->post_type, 'numberposts' => -1, 'post_status' => 'publish' ] );
-		foreach( (array) $children as $page_child_id => $page_child ) $this->addChild($page_child_id);
+		foreach( (array) $children as $page_child_id => $page_child ) $this->addChild($page_child_id, $plugin);
+
 		$plugin->deactivate($this->id);
+
 		return true;
 	}
 
 	function view() {
 		return [
-			'id' => $this->id,
-			'slug' => $this->slug,
+			'id'        => $this->id,
+			'slug'      => $this->slug,
 			'post_type' => $this->post_type,
-			'content' => $this->content,
-			'hr' => $this->hr,
-			'title' => $this->title,
-			'wrap' => $this->wrap,
-			'children' => $this->children
+			'content'   => $this->content,
+			'hr'        => $this->hr,
+			'title'     => $this->title,
+			'wrap'      => $this->wrap,
+			'children'  => $this->children
 		];
 	}
 
