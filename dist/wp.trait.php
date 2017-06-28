@@ -5,19 +5,19 @@ trait WP {
 
 	public function &wpdb($set = false){
 		global $wpdb;
-		if($set) $wpdb = $set;
+		if($set) $wpdb = clone $set;
 		return $wpdb;
 	}
 
 	public function &wp_query($set = false){
 		global $wp_query;
-		if($set) $wp_query = $set;
+		if($set) $wp_query = clone $set;
 		return $wp_query;
 	}
 
 	public function &post($set = false){
 		global $post;
-		if($set) $post = $set;
+		if($set) $post = clone $set;
 		return $post;
 	}
 
@@ -51,8 +51,8 @@ trait WP {
 	}
 
 	public function unload_wp_query() {
-		$this->wpdb(clone $this->query_stash);
-		setup_postdata($GLOBALS['post']);
+		$this->wpdb($this->query_stash);
+		setup_postdata($this->post());
 	}
 
 }

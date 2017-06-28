@@ -55,7 +55,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 	function deactivate($id) {
 		$this->running[$id] = false;
 		if($id == $this->first) {
-			//wp_reset_postdata();
+			wp_reset_postdata();
 			$this->active = false;
 			$this->first= false;
 		}
