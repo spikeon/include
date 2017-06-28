@@ -82,6 +82,8 @@ class Single extends Instance {
 		$c               = get_the_content();
 		$this->content   = apply_filters('the_content', strtolower($this->recursion) == "strict" ? $this->strip_nesting($c) : $c);
 
+		if(empty(trim($this->content))) return false;
+
 		$this->hr        = $this->attributes['hr'];
 
 		$this->title = [
