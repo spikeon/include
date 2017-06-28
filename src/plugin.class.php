@@ -43,6 +43,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 		if(!isset($this->running[$id])) $this->running[$id] = false;
 		if( $this->running[$id] === true) return false;
 		$this->running[$id] = true;
+		debug_print_backtrace($this->running);
 		return true;
 	}
 
