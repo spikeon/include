@@ -21,12 +21,12 @@ abstract class Instance {
 	 * Load Instance
 	 *
 	 * @since 4.0.0
-	 * @param $q
+	 * @param $identifier
 	 * @param Plugin $plugin
 	 *
 	 * @return mixed
 	 */
-	abstract protected function load($q, $plugin);
+	abstract protected function load($identifier , $plugin);
 
 	/**
 	 * Generate View
@@ -38,19 +38,28 @@ abstract class Instance {
 	abstract public function view();
 
 	/**
-	 * Instance constructor.
+	 * Instance constructor
 	 *
-	 * @param $q
+	 *
+	 * @since 4.0.0
+	 * @param integer|string $identifier slug or ID
 	 * @param $a Attributes
 	 * @param Plugin $plugin
 	 */
-	function __construct($q, $a, $plugin) {
-		var_dump($a);
+	function __construct($identifier, $a, $plugin) {
 		unset($a['id'], $a['slug']);
 		$this->attributes = $a;
-		$this->load($q, $plugin);
+		$this->load($identifier , $plugin);
 	}
 
+	/**
+	 * Strip Content
+	 *
+	 * @since 4.0.0
+	 * @param string $content Page content
+	 *
+	 * @return string Formatted Page Content
+	 */
 	function strip_nesting($content){
 		return preg_replace( "/\[include[^\]]*\]/im", "", $content);
 	}
@@ -58,8 +67,8 @@ abstract class Instance {
 
 class Single extends Instance {
 
-	function load($q, $plugin) {
-		$this->id = $plugin->find_id($q);
+	function load($identifier, $plugin) {
+		$this->id = $plugin->find_id($identifier);
 		if(!$this->id) return false;
 		if(!$plugin->activate($this->id)) return false;
 
@@ -117,8 +126,8 @@ class Multiple extends Instance {
 		$this->children[] = new Single($id, $this->attributes, $plugin);
 	}
 
-	function load($q, $plugin) {
-		$this->id = $plugin->find_id($q) ?:  get_the_id();
+	function load($identifier, $plugin) {
+		$this->id = $plugin->find_id($identifier) ?:  get_the_id();
 		if(!$this->id)  return false;
 		if(!$plugin->activate($this->id)) return false;
 
