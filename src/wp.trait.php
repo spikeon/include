@@ -31,16 +31,14 @@ trait WP {
 	}
 
 	public function load_wp_query($q) {
-		global $wpdb;
-		$this->query_stash = clone $wpdb;
-		query_posts($q);
-		the_post();
+		global $wp_query;
+		$this->query_stash = $wp_query;
+		$query = WP_Query($q);
+		$query->the_post();
 	}
 
 	public function unload_wp_query() {
-		global $wpdb, $post;
-		$wpdb = clone $this->query_stash;
-		setup_postdata($post);
+		wp_reset_postdata();
 	}
 
 }
