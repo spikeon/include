@@ -32,8 +32,8 @@
 			echo "<b>Data:</b><br><pre>";
 			var_export($dump);
 			echo "</pre><b>Backtrace:</b><br>";
-			debug_print_backtrace($this->running);
-			
+			debug_print_backtrace();
+
 		}
 
 	}
