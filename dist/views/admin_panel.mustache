@@ -30,7 +30,7 @@
 							{{/is_text}}
 
 							{{#is_checkbox}}
-								<input type="checkbox" name="{{form_name}}[{{name}}]" id="{{name}}" value="y">
+								<input type="checkbox" name="{{form_name}}[{{name}}]" {{#checked}}checked{{/checked}} id="{{name}}" value="y">
 							{{/is_checkbox}}
 
 							<p class="description">{{tip}}</p>
