@@ -3,19 +3,19 @@ namespace IncludePlugin;
 trait WP {
 	public $query_stash;
 
-	public function &wpdb($set){
+	public function &wpdb($set = false){
 		global $wpdb;
 		if($set) $wpdb = $set;
 		return $wpdb;
 	}
 
-	public function &wp_query($set){
+	public function &wp_query($set = false){
 		global $wp_query;
 		if($set) $wp_query = $set;
 		return $wp_query;
 	}
 
-	public function &post($set){
+	public function &post($set = false){
 		global $post;
 		if($set) $post = $set;
 		return $post;
