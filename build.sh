@@ -1,15 +1,10 @@
 
 # Handle Options
 
-do_stable=false
 COMMITMSG=""
 
-while getopts ":sm:" opt; do
+while getopts ":m:" opt; do
   case $opt in
-    s)
-      # Make Stable
-        do_stable=true
-      ;;
     m)
       # Sending In msg
       COMMITMSG="$OPTARG"
@@ -61,17 +56,6 @@ fi
 
 if [[ ! -z "$UPGRADENOTICE" ]]; then
     printf '%s\n' "= $VERSION =" "$UPGRADENOTICE" '' "`cat readme/UPGRADE_NOTICE.md`" > readme/UPGRADE_NOTICE.md
-fi
-
-echo "Stable: $STABLE"
-echo "$MAINFILE version: $VERSION"
-
-if [[ $do_stable ]]; then
-echo "Making this version stable"
-echo "%s/$STABLE/$VERSION/g
-w
-q
-" | ex package.json
 fi
 
 grunt build
