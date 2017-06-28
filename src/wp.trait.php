@@ -50,7 +50,7 @@ trait WP {
 
 	protected function load_wp_query($q) {
 		$this->query_stash = clone $GLOBALS['wpdb'];
-		query_posts([$this->id_col => $this->id]);
+		query_posts($q);
 		the_post();
 		$this->wp_globs();
 	}
