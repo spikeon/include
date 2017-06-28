@@ -93,8 +93,6 @@
 
 		protected function loadAttributes($shortcode){
 			if(!isset($this->default_attributes[$shortcode])){
-				var_dump($shortcode);
-				var_dump($this->default_attributes);
 				if(isset($this->{'shortcode_attributes_'.$shortcode})){
 					$this->setDefaultAttributes($shortcode, $this->{'shortcode_attributes_'.$shortcode});
 				}
@@ -117,6 +115,7 @@
 			foreach($shortcode_methods as $method) {
 				$name = $this->shortcode_pre( str_replace( 'shortcode_', '', $method ) );
 				add_shortcode( $name, [ &$this, $method ] );
+				$this->loadAttributes($name);
 			}
 
 		}
