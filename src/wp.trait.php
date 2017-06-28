@@ -33,7 +33,7 @@ trait WP {
 	public function load_wp_query($q) {
 		global $wp_query;
 		$this->query_stash = $wp_query;
-		$query = WP_Query($q);
+		$query = \WP_Query($q);
 		$query->the_post();
 	}
 
