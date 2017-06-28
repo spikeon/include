@@ -36,6 +36,7 @@ abstract class Instance {
 }
 
 class Single extends Instance {
+
 	function load($q, $plugin) {
 		$this->id = $this->find_id($q);
 		if(!$this->id) return false;
@@ -48,7 +49,7 @@ class Single extends Instance {
 
 		$this->load_wp_query([$this->post_type == 'page' ? 'page_id' : 'p' => $this->id]);
 
-		$c = get_the_content();
+		$c               = get_the_content();
 		$this->content   = apply_filters('the_content', strtolower($this->recursion) == "strict" ? $this->strip_nesting($c) : $c);
 
 		$this->hr        = $this->attributes['hr'];
@@ -65,10 +66,12 @@ class Single extends Instance {
 			'element'   => $this->attributes['wrap'],
 			'class'     => $this->attributes['wrap_class']
 		];
+
 		$this->unload_wp_query();
 
 		$plugin->deactivate($this->id);
-		$this->show_me($this->view());
+
+		return true;
 	}
 
 	function view() {
@@ -104,6 +107,7 @@ class Multiple extends Instance {
 		$children = get_children( [ 'post_parent' => $this->id, 'post_type'   => $this->post_type, 'numberposts' => -1, 'post_status' => 'publish' ] );
 		foreach( (array) $children as $page_child_id => $page_child ) $this->addChild($page_child_id);
 		$plugin->deactivate($this->id);
+		return true;
 	}
 
 	function view() {
