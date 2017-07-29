@@ -31,14 +31,9 @@ module.exports = function(grunt) {
                     process : filter_php
                 }
             },
-            gallery: {
-                src: 'gallery*.png',
-                dest: 'assets/',
-                rename: (dest,src) => {
-                    return dest + src.replace('gallery', 'screenshot-');
-                }
-            },
-            thumb: {
+	        gallery1 : { src : ["gallery1.png"], dest: "assets/screenshot-1.png"},
+
+	        thumb: {
                 src: ['icon.png'],
                 dest: 'thumb.png'
             },
@@ -139,7 +134,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('assets', [
         'clean:assets_pre',
-        'copy:gallery',
+        'copy:gallery1',
         'convert-svg-to-png:icon',
         'copy:thumb',
         'image_resize:icon_small',

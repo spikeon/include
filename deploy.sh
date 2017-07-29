@@ -68,7 +68,7 @@ done
 CHANGELOG=`echo "$COMMITMSG" | grep "^[*]"`
 UPGRADENOTICE=`echo "$COMMITMSG" | grep "^[+]"`
 
-if [[ -z "VERSION" ]]; then
+if [[ -z "$VERSION" ]]; then
 versiony package.json --patch
 else
 versiony package.json --version=$VERSION
