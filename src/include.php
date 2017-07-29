@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Include
- * Plugin URI: http://wordpress.org/plugins/include/
+ * Plugin URI: http://flynndev.us/project/include
  * Description: Include a page, post, activity, or other query-object into another.
  * Version: %ver%
  * Author: mflynn, cngann, Clear_Code, bmcswee, flynndev
