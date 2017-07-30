@@ -11,9 +11,9 @@
 
 require_once('../framework/dist/load.php');
 
-PluginFramework\register("Include", __FILE__);
+PluginFramework\V_1_1\register("Include", __FILE__);
 
-if(PluginFramework\check_version()) {
+if(PluginFramework\V_1_1\check_version()) {
 	require_once( 'wp.trait.php' );
 	require_once( 'Instance.class.php' );
 	require_once( 'plugin.class.php' );
