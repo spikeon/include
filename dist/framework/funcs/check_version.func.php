@@ -7,6 +7,6 @@
 		 * @return bool
 		 */
 		function check_version() {
-			return ! version_compare( PHP_VERSION, '5.4.0', '<' );
+			return ! version_compare( PHP_VERSION, phpver(), '<' );
 		}
 	}
