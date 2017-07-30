@@ -90,7 +90,7 @@ fi
 echo "Stable: $STABLE"
 echo "$MAINFILE version: $VERSION"
 
-if [[ $do_stable ]]; then
+if [ "$do_stable" = true ]; then
 echo "Making this version stable"
 echo "%s/$STABLE/$VERSION/g
 w
