@@ -15,7 +15,7 @@ if(! function_exists(__NAMESPACE__ . "\admin_notice_ver")) {
 }
 
 if(! function_exists(__NAMESPACE__ . "\admin_notice_settings")) {
-	function admin_notice_ver(){
+	function admin_notice_settings(){
 		$message = __( 'The plugins ' . implode(', ', array_keys($GLOBALS['plugin_framework_v_1_1_plugins'])) . ' require PHP Settings to be enabled: '. implode(', ',$GLOBALS['plugin_framework_v_1_1_php_settings']), 'plugin-core' );
 	}
 }
