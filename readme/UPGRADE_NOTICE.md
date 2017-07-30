@@ -1,3 +1,6 @@
+= 4.0.14 =
++ Requires Server Setting: allow_url_fopen
+
 = 4.0.3 =
 + PHP Version Requirement: >=  5.4.0 
 

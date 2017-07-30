@@ -4,7 +4,7 @@ Contributors: mflynn, cngann, Clear_Code, bmcswee, flynndev
 Tags: shortcode,shortcodes,page,pages,post,posts,loop,the loop,include,include other post,include other page,get,utilities,fetch,content
 Requires at least: 2.5
 Tested up to: 4.8
-Stable tag: 4.0.2
+Stable tag: 4.0.14
 License: GPL-3.0
 License URI: https://spdx.org/licenses/GPL-3.0.html
 
@@ -163,6 +163,9 @@ If an ID is given it includes the child pages of that page, in order.
 
 
 == Upgrade Notices ==
+
+= 4.0.14 =
++ Requires Server Setting: allow_url_fopen
 
 = 4.0.3 =
 + PHP Version Requirement: >=  5.4.0 
