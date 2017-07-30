@@ -9,7 +9,10 @@
  * License: GPL2
  */
 
-require_once('../framework/dist/load.php');
+if(file_exists('../framework/dist/load.php'))
+	require_once('../framework/dist/load.php');
+else
+	require_once(dirname(dirname(__FILE__)).'/framework/dist/load.php');
 
 PluginFramework\V_1_1\register("Include", __FILE__);
 
@@ -18,5 +21,5 @@ if(PluginFramework\V_1_1\check_version()) {
 	require_once( 'Instance.class.php' );
 	require_once( 'plugin.class.php' );
 
-	$Include = new IncludePlugin\Plugin( "include", '%ver%', __FILE__ );
+	$GLOBALS['Include'] = new IncludePlugin\Plugin( "include", '%ver%', __FILE__ );
 }

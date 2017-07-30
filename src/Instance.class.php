@@ -43,7 +43,7 @@ abstract class Instance {
 	 *
 	 * @since 4.0.0
 	 * @param integer|string $identifier slug or ID
-	 * @param $a Attributes
+	 * @param array $a Attributes
 	 * @param Plugin $plugin
 	 */
 	function __construct($identifier, $a, $plugin) {
