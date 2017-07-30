@@ -1,7 +1,7 @@
 <?php
 /**
  * Package:  WordPress Plugin Framework
- * Version:  1.1.110
+ * Version:  1.1.111
  * Date:     29-07-2017
  * Copyright 2017 Mike Flynn - mflynn@flynndev.us
  */ 
@@ -18,7 +18,7 @@ if(!function_exists('plugin_framework_check_version')) {
 	 * @return bool
 	 */
 	function plugin_framework_check_version() {
-		return version_compare( PHP_VERSION, '5.4.0', '<' );
+		return ! version_compare( PHP_VERSION, '5.4.0', '<' );
 	}
 }
 
@@ -33,7 +33,7 @@ if(! function_exists("plugin_core_error_admin_notice")) {
 
 }
 
-if( plugin_framework_check_version() ) {
+if( plugin_framework_check_version() == false ) {
 	add_action( 'admin_notices', 'plugin_core_error_admin_notice' );
 }
 else {

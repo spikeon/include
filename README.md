@@ -1,4 +1,4 @@
-Include - 4.0.4
+Include - 4.0.5
 ===
 
 The Include plugin for WordPress allows you to include the content of one page, post, or other such WordPress object into any other with a shortcode.
