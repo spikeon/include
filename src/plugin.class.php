@@ -202,6 +202,7 @@ class Plugin extends \PluginFramework\V_1_1\Core {
 	function __construct($name, $ver, $file) {
 		$this->setShortcodePrefix("");
 		$this->setHomePage('include');
+		$this->setMenuTitle("Include");
 		$this->init($name, $ver, $file);
 	}
 }
