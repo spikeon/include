@@ -10,8 +10,11 @@
  */
 
 require_once('../framework/dist/load.php');
-require_once('wp.trait.php');
-require_once('Instance.class.php');
-require_once('plugin.class.php');
 
-$Include = new IncludePlugin\Plugin("include", '%ver%', __FILE__);
+if(plugin_framework_check_version()) {
+	require_once( 'wp.trait.php' );
+	require_once( 'Instance.class.php' );
+	require_once( 'plugin.class.php' );
+
+	$Include = new IncludePlugin\Plugin( "include", '%ver%', __FILE__ );
+}

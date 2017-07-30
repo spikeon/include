@@ -85,6 +85,9 @@ If an ID is given it includes the child pages of that page, in order.
 
 == Changelog ==
 
+= 4.0.3 =
+* Attempting to override server setting conflict with Mustache
+
 = 4.0.0 =
 * Updated Include to use new WP_Query Method of nested looping instead of cloning $wpdb
 * Updated this to use my PluginFramework
@@ -160,6 +163,9 @@ If an ID is given it includes the child pages of that page, in order.
 
 
 == Upgrade Notices ==
+
+= 4.0.3 =
++ PHP Version Requirement: >=  5.4.0 
 
 = 4.0.0 =
 + Please make sure you know what your options are before you update this plugin, as the update may lose those options.  Sorry, this is a complete rewrite of the plugin.

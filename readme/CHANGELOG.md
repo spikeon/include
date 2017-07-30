@@ -1,3 +1,6 @@
+= 4.0.3 =
+* Attempting to override server setting conflict with Mustache
+
 = 4.0.0 =
 * Updated Include to use new WP_Query Method of nested looping instead of cloning $wpdb
 * Updated this to use my PluginFramework
