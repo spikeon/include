@@ -3,7 +3,7 @@
 	trait Shortcode {
 
 		public $shortcode_prefix = false;
-		protected $shortcodes     = [];
+		protected $shortcodes = [];
 
 		/**
 		 * Set Shortcode Prefix
@@ -19,11 +19,11 @@
 		 * @param string $prefix Prefix
 		 */
 		public function setShortcodePrefix($prefix, $force = false) {
-			if($this->prefix === false || $force) $this->shortcode_prefix = $this->sterilize($prefix);
+			if($this->shortcode_prefix === false || $force) $this->shortcode_prefix = $this->sterilize($prefix);
 		}
 
 		public function getShortcodePrefix() {
-			return $this->shortcode_prefix  == "" ? "" : $this->sterilize($$this->shortcode_prefix) . '_';
+			return $this->shortcode_prefix == "" ? "" : $this->sterilize($this->shortcode_prefix) . '_';
 		}
 
 		/**

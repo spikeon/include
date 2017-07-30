@@ -69,4 +69,18 @@
 			return ucwords(implode(" ", $a));
 		}
 
+		public function check_nonce($name){
+			$n = $this->pre($name);
+			if ( !isset( $_REQUEST['_'.$n] ) || !wp_verify_nonce( $_REQUEST['_'.$n], $n ) ){
+				return false;
+			}
+			return true;
+		}
+
+		public function nonce($name){
+			$n = $this->pre($name);
+			$nonce = wp_create_nonce($n);
+			return "<input type='hidden' id='_{$n}' name='_{$n}' value='{$nonce}' />";
+		}
+
 	}
