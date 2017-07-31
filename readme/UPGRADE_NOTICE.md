@@ -1,3 +1,6 @@
+= 4.0.24 =
++ Removed fopen dependancy to allow for compatability with more servers
+
 = 4.0.14 =
 + Requires Server Setting: allow_url_fopen
 
