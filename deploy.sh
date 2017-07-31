@@ -113,6 +113,7 @@ fi
 grunt build
 grunt assets
 grunt dist
+grunt release
 
 git add .
 

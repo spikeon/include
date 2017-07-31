@@ -72,6 +72,8 @@ grunt build
 
 grunt dist
 
+grunt release
+
 grunt clean:prepush
 
 git add .

@@ -58,7 +58,13 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd : 'dist',
                 src : '**',
-                dest : 'releases/<% pkg.version %>/include'
+                dest : 'releases/current/include'
+            },
+            version : {
+	            expand: true,
+	            cwd : 'releases/current',
+	            src : '**',
+	            dest : 'releases/' + package.version + '/'
             }
         },
 
@@ -85,11 +91,12 @@ module.exports = function(grunt) {
 
         clean : {
             init :        ['build', 'README.md'],
-            dist :        ['dist'],
-            assets_pre :  ['assets', 'thumb.png'],
+            dist :        ['dist/*'],
+            assets_pre :  ['assets/*', 'thumb.png'],
             assets_post : ['icon.png'],
             end:          ['build'],
-            prepush:      ['assets']
+            prepush:      ['assets/*'],
+	        release:      ['releases/current/*']
         },
 
         "convert-svg-to-png" : {
@@ -140,7 +147,24 @@ module.exports = function(grunt) {
 	            bootstrap: 'tests/bootstrap.php',
 	            colors: true
             }
-        }
+        },
+
+	    compress: {
+		    release: {
+			    options: {
+				    archive: 'releases/current/include.zip'
+			    },
+			    files: [
+				    {
+				        expand: true,
+                        cwd: 'dist/',
+                        src: ['**'],
+                        dest: '/'
+                    }
+			    ]
+		    }
+
+	    }
 
     });
 
@@ -149,6 +173,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-image-resize');
     grunt.loadNpmTasks('grunt-convert-svg-to-png');
+    grunt.loadNpmTasks('grunt-contrib-compress');
 
     grunt.registerTask('assets', [
         'clean:assets_pre',
@@ -160,7 +185,24 @@ module.exports = function(grunt) {
         'clean:assets_post'
     ]);
 
-    grunt.registerTask('build', ['clean:init', 'copy:build', 'copy:framework', 'concat:readme', 'concat:readme_wp']);
-    grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'clean:end']);
-    grunt.registerTask('release', ['copy:release'])
+    grunt.registerTask('build',     [
+        'clean:init',
+        'copy:build',
+        'copy:framework',
+        'concat:readme',
+        'concat:readme_wp'
+    ]);
+
+    grunt.registerTask('dist',      [
+        'clean:dist',
+        'copy:dist',
+        'clean:end'
+    ]);
+
+    grunt.registerTask('release',   [
+        'clean:release',
+        'copy:release',
+        // 'compress:release',
+        'copy:version'
+    ]);
 };
