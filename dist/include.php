@@ -3,7 +3,7 @@
  * Plugin Name: Include
  * Plugin URI: http://flynndev.us/project/include
  * Description: Include a page, post, activity, or other query-object into another.
- * Version: 4.0.21
+ * Version: 4.0.23
  * Author: mflynn, cngann, Clear_Code, bmcswee, flynndev
  * Author URI: http://clearcode.info
  * License: GPL2
@@ -21,5 +21,5 @@ if(PluginFramework\V_1_1\check_version()) {
 	require_once( 'Instance.class.php' );
 	require_once( 'plugin.class.php' );
 
-	$GLOBALS['Include'] = new IncludePlugin\Plugin( "include", '4.0.21', __FILE__ );
+	$GLOBALS['Include'] = new IncludePlugin\Plugin( "include", '4.0.23', __FILE__ );
 }

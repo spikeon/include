@@ -6,10 +6,12 @@ if(empty($GLOBALS['plugin_framework_v_1_1_php_settings'])) $GLOBALS['plugin_fram
 if(!function_exists(__NAMESPACE__ . '\php_settings')){
 	function php_settings(){
 
-		// Attempt to tell server to allow url fopen
-		ini_set('allow_url_fopen', 1);
+		// Keeping in case I need to use this for a different setting
 
-		if(ini_get('allow_url_fopen') != 1) return false; // Failed to change setting
+		// Attempt to tell server to allow url fopen
+		// ini_set('allow_url_fopen', 1);
+
+		// if(ini_get('allow_url_fopen') != 1) return false; // Failed to change setting
 		return true;
 
 	}
