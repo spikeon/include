@@ -122,6 +122,18 @@ module.exports = function(grunt) {
                 }
             }
 
+        },
+
+        phpunit : {
+	        classes: {
+		        dir: '.'
+	        },
+            options : {
+	            configuration : "phpunit.xml.dist",
+	            bin: '/usr/local/bin/phpunit',
+	            bootstrap: 'tests/bootstrap.php',
+	            colors: true
+            }
         }
 
     });
@@ -141,6 +153,7 @@ module.exports = function(grunt) {
         'image_resize:icon_large',
         'clean:assets_post'
     ]);
+
     grunt.registerTask('build', ['clean:init', 'copy:build', 'copy:framework', 'concat:readme', 'concat:readme_wp']);
     grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'clean:end']);
 };

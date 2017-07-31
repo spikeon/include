@@ -24,7 +24,7 @@
 		 * Initialize View
 		 */
 		protected function init_view() {
-			$this->view = new \Mustache_Engine( [ 'loader' => new \Mustache_Loader_FilesystemLoader( plugins_url( $this->view_dir, $this->getFile() ) ) ] );
+			$this->view = new \Mustache_Engine( [ 'loader' => new \Mustache_Loader_FilesystemLoader( $this->getRoot() .'/' . $this->view_dir ) ] );
 		}
 
 		/**

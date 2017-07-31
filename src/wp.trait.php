@@ -34,7 +34,11 @@ trait WP {
 		global $wp_query;
 		$this->query_stash = $wp_query;
 		$query = new \WP_Query($q);
-		$query->the_post();
+		if($query->have_posts()) {
+			$query->the_post();
+			return true;
+		}
+		else return false;
 	}
 
 	public function unload_wp_query() {

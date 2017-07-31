@@ -2,7 +2,7 @@
   "name": "include",
   "title": "Include",
   "description": "Include one Page or Post into another.",
-  "version": "4.0.15",
+  "version": "4.0.16",
   "stable": "4.0.15",
   "wp_requires": "2.5",
   "wp_tested": "4.8",
@@ -46,6 +46,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-convert-svg-to-png": "^1.1.0",
     "grunt-image-resize": "^1.0.0",
+    "grunt-phpunit": "^0.3.6",
     "grunt-svg2png": "^0.2.7"
   },
   "githuburl": "https://github.com/spikeon/include",

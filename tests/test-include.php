@@ -19,33 +19,31 @@ class IncludeTest extends WP_UnitTestCase {
 		'wrap_class' 	=> 'test_wrap_class'
 	];
 
-
-	function test_pages() {
-		$regular = wp_insert_post([ 'post_title' => 'Regular', 'post_content' => 'test1']);
-		$shortcode = wp_insert_post([ 'post_title' => 'Shortcode', 'post_content' => "[include id={$regular}]"]);
-		$recursive = wp_insert_post([ 'post_title' => 'Recursive', 'post_content' => '']);
-		wp_insert_post(['post_content' => "[include id={$recursive}]", "ID" => $recursive]);
-
-		$pages = [
-			'regular'   => $regular,
-			'shortcode' => $shortcode,
-			'recursive' => $recursive
-		];
-
-		$this->assertTrue(is_int($pages['regular']), "Inserted Post 1 failed");
-		$this->assertTrue(is_int($pages['shortcode']), "Inserted Post 2 failed");
-		$this->assertTrue(is_int($pages['recursive']), "Inserted Post 3 failed");
-
-		return $pages;
+	public function log($msg) {
+		$this->assertTrue(false, $msg);
 	}
 
-	/**
-	 * @depends test_pages
-	 */
-	function test_single_instance($pages){
+	function test_all_on(){
 
-		$i = new IncludePlugin\Single( $pages['regular'], $this->attributes, $GLOBALS['Include'] );
-		$v = $i->view();
+		$v = $GLOBALS['Include']->render('include', [
+			'failed'    => false,
+			'id'        => 1,
+			'slug'      => 'test',
+			'post_type' => 'page',
+			'content'   => 'test1',
+			'hr'        => true,
+			'title'     => [
+				'content'   => 'Regular',
+				'show'      => true,
+				'element'   => 'ttl',
+				'class'     => 'test_title_class'
+			],
+			'wrap'      => [
+				'show'      => true,
+				'element'   => 'wrap',
+				'class'     => 'test_wrap_class'
+			],
+		]);
 
 		$this->assertContains( 'Regular',           $v, "Title doesn't work" );
 		$this->assertContains( 'ttl',               $v, "Title Container Element Incorrect" );
@@ -55,24 +53,39 @@ class IncludeTest extends WP_UnitTestCase {
 		$this->assertContains( 'test_wrap_class',   $v, "Wrap Class doesn't work" );
 		$this->assertContains( 'test1',             $v, "Content doesn't work" );
 
-		return $pages;
 	}
 
-	/**
-	 * @depends test_single_instance
-	 */
-	function test_shortcode($pages) {
-		$i = new IncludePlugin\Single( $pages['shortcode'], $this->attributes, $GLOBALS['Include'] );
-		$v = $i->view();
+	function test_all_off(){
 
-		$this->assertContains( 'Regular',           $v, "Title doesn't work" );
-		$this->assertContains( 'ttl',               $v, "Title Container Element Incorrect" );
-		$this->assertContains( 'test_title_class',  $v, "Title Class doesn't work" );
-		$this->assertContains( 'hr',                $v, "Horizontal Row doesn't work" );
-		$this->assertContains( 'wrap',              $v, "Wrap doesn't work" );
-		$this->assertContains( 'test_wrap_class',   $v, "Wrap Class doesn't work" );
+		$v = $GLOBALS['Include']->render('include', [
+			'failed'    => false,
+			'id'        => 1,
+			'slug'      => 'test',
+			'post_type' => 'page',
+			'content'   => 'test1',
+			'hr'        => false,
+			'title'     => [
+				'content'   => 'Regular',
+				'show'      => false,
+				'element'   => 'ttl',
+				'class'     => 'test_title_class'
+			],
+			'wrap'      => [
+				'show'      => false,
+				'element'   => 'wrap',
+				'class'     => 'test_wrap_class'
+			],
+		]);
+
+		$this->assertNotContains( 'Regular',           $v, "Title doesn't work" );
+		$this->assertNotContains( 'ttl',               $v, "Title Container Element Incorrect" );
+		$this->assertNotContains( 'test_title_class',  $v, "Title Class doesn't work" );
+		$this->assertNotContains( 'hr',                $v, "Horizontal Row doesn't work" );
+		$this->assertNotContains( 'wrap',              $v, "Wrap doesn't work" );
+		$this->assertNotContains( 'test_wrap_class',   $v, "Wrap Class doesn't work" );
 		$this->assertContains( 'test1',             $v, "Content doesn't work" );
 
-		return $pages;
 	}
+
+
 }

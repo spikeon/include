@@ -11,6 +11,8 @@ abstract class Instance {
 	public $title = [];
 	public $content = "";
 
+	public $query = [];
+
 	public $failed = false;
 
 	protected $recursion;
@@ -43,7 +45,7 @@ abstract class Instance {
 	 *
 	 * @since 4.0.0
 	 * @param integer|string $identifier slug or ID
-	 * @param $a Attributes
+	 * @param array $a Attributes
 	 * @param Plugin $plugin
 	 */
 	function __construct($identifier, $a, $plugin) {
@@ -69,7 +71,7 @@ class Single extends Instance {
 
 	function load($identifier, $plugin) {
 
-		$plugin->activate(get_the_id());
+		if(in_the_loop()) $plugin->activate(get_the_id());
 
 		$this->id = $plugin->find_id($identifier);
 		if(!$this->id) return false;
@@ -80,7 +82,12 @@ class Single extends Instance {
 
 		$this->recursion = $this->attributes['recursion'];
 
-		$plugin->load_wp_query([$this->post_type == 'page' ? 'page_id' : 'p' => $this->id]);
+		// if($this->post_type == 'page') $this->query['page_id'] = $this->id;
+		$this->query['p'] = $this->id;
+		$this->query['post_type'] = 'any';
+
+		if( ! $plugin->load_wp_query($this->query) ) return false;
+		// $post = get_post($this->id);
 
 		$c               = get_the_content();
 		$this->content   = apply_filters('the_content', strtolower($this->recursion) == "strict" ? $this->strip_nesting($c) : $c);

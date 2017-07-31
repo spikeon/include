@@ -1,4 +1,10 @@
 
+phpunit
+
+if [ $? -ne 0 ]; then
+        echo "Failed Unit Test, Don't build."
+fi
+
 # Handle Options
 
 COMMITMSG=""
