@@ -101,7 +101,10 @@
 					$this->setDefaultAttributes($shortcode, $this->{'shortcode_attributes_'.$shortcode});
 				}
 			}
-			$this->attributes[$shortcode] = $this->pull($this->concat($shortcode, 'atts'), $this->default_attributes[$shortcode] ?: []);
+			$this->attributes[$shortcode] = $this->pull(
+				$this->concat($shortcode, 'atts'),
+				! empty($this->default_attributes[$shortcode]) ? $this->default_attributes[$shortcode] : []
+			);
 		}
 
 		protected function atts($shortcode, $a = []) {
