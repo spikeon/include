@@ -42,6 +42,18 @@ while getopts ":sm:v:" opt; do
 done
 
 
+echo "Starting Unit Tests"
+
+phpunit
+
+if [ $? -ne 0 ]; then
+        echo "Failed Unit Test, Don't build."
+        exit
+fi
+
+echo "Ending Unit Tests"
+
+
 # main config
 PLUGINSLUG="include"
 CURRENTDIR=`pwd`

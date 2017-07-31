@@ -1,10 +1,3 @@
-
-phpunit
-
-if [ $? -ne 0 ]; then
-        echo "Failed Unit Test, Don't build."
-fi
-
 # Handle Options
 
 COMMITMSG=""
@@ -26,6 +19,17 @@ while getopts ":m:" opt; do
       ;;
   esac
 done
+
+echo "Starting Unit Tests"
+
+phpunit
+
+if [ $? -ne 0 ]; then
+        echo "Failed Unit Test, Don't build."
+        exit
+fi
+
+echo "Ending Unit Tests"
 
 
 # main config
