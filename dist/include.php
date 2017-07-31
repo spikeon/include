@@ -3,18 +3,16 @@
  * Plugin Name: Include
  * Plugin URI: http://flynndev.us/project/include
  * Description: Include a page, post, activity, or other query-object into another.
- * Version: 4.0.20
+ * Version: 4.0.21
  * Author: mflynn, cngann, Clear_Code, bmcswee, flynndev
  * Author URI: http://clearcode.info
  * License: GPL2
  */
 
-$wordpress_location = 'framework/load.php';
+if(basename(dirname(__FILE__)) == "src") $location = dirname(dirname(__FILE__)).'/framework/dist/load.php';
+else $location = 'framework/load.php';
 
-$phpunit_location = dirname(dirname(__FILE__)).'/framework/dist/load.php';
-
-if(file_exists($wordpress_location)) require_once($wordpress_location);
-else require_once($phpunit_location);
+require_once($location);
 
 PluginFramework\V_1_1\register("Include", __FILE__);
 
@@ -23,5 +21,5 @@ if(PluginFramework\V_1_1\check_version()) {
 	require_once( 'Instance.class.php' );
 	require_once( 'plugin.class.php' );
 
-	$GLOBALS['Include'] = new IncludePlugin\Plugin( "include", '4.0.20', __FILE__ );
+	$GLOBALS['Include'] = new IncludePlugin\Plugin( "include", '4.0.21', __FILE__ );
 }

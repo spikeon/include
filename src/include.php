@@ -9,12 +9,10 @@
  * License: GPL2
  */
 
-$wordpress_location = '../framework/dist/load.php';
+if(basename(dirname(__FILE__)) == "src") $location = dirname(dirname(__FILE__)).'/framework/dist/load.php';
+else $location = '../framework/dist/load.php';
 
-$phpunit_location = dirname(dirname(__FILE__)).'/framework/dist/load.php';
-
-if(file_exists($wordpress_location)) require_once($wordpress_location);
-else require_once($phpunit_location);
+require_once($location);
 
 PluginFramework\V_1_1\register("Include", __FILE__);
 
