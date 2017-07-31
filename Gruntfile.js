@@ -53,6 +53,12 @@ module.exports = function(grunt) {
                 cwd: 'build',
                 src: '**',
                 dest: 'dist/'
+            },
+            release : {
+                expand: true,
+                cwd : 'dist',
+                src : '**',
+                dest : 'releases/<% pkg.version %>/include'
             }
         },
 
@@ -156,4 +162,5 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', ['clean:init', 'copy:build', 'copy:framework', 'concat:readme', 'concat:readme_wp']);
     grunt.registerTask('dist', ['clean:dist', 'copy:dist', 'clean:end']);
+    grunt.registerTask('release', ['copy:release'])
 };
